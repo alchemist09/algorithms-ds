@@ -106,6 +106,30 @@ class DepthFirstTraversal {
   Map<Integer, Integer> color;
   int start;
 
+  /**
+   * Constructor
+   * @param g Graph - The graph to traverse in depth-first manner
+   * @param s vertex -  An integer denoting the start vertex of the traversal
+   */
+  public DepthFirstTraversal(Graph g, int s) {
+    // Initialize a DFS traversal of the graph
+    graph = g;
+    start = s;
+    pred = new HashMap<Integer, Integer>();
+    color = new HashMap<Integer, Integer>();
+
+    // Set initial color of all vertices before beginning traversal
+    // Set the predecessor of all vertices as null
+
+    for(int v : graph.edges.keySet()) {
+      color.put(v, White);
+      pred.put(v, null);
+    }
+
+    // Do the DFS 
+    this.dfs_visit(s);
+  }
+
   public void dfs_visit(int u) {
     // recursive traversal of graph using DFS
     color.put(u, Gray);
