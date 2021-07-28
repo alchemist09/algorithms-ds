@@ -25,4 +25,27 @@ class Graph {
       edges.put(vertex, adjacencyList);
     }
   }
+
+  /**
+   * Add an edge
+   */
+  public void addEdge(int src, int dest) {
+    if(!edges.containsKey(src)) {
+      edges.put(src, new ArrayList<Integer>());
+    }
+    if(!edges.containsKey(dest)) {
+      edges.put(dest, new ArrayList<Integer>());
+    }
+
+    List<Integer> src_adjacency_list = edges.get(src);
+    List<Integer> dest_adjacency_list = edges.get(dest);
+
+    if(!src_adjacency_list.contains(dest)) {
+      src_adjacency_list.add(dest);
+    }
+    
+    if(!dest_adjacency_list.contains(src)) {
+      dest_adjacency_list.add(src);
+    }
+  }
 }
