@@ -105,4 +105,20 @@ class DepthFirstTraversal {
   Map<Integer, Integer> pred;
   Map<Integer, Integer> color;
   int start;
+
+  public void dfs_visit(int u) {
+    // recursive traversal of graph using DFS
+    color.put(u, Gray);
+    // System.out.println("Color Map: " + color);
+    for(int v : graph.edges.get(u)) {
+      // System.out.println("Vertex: " + v);
+      if(color.get(v) == White) {
+        pred.put(v, u);
+        this.dfs_visit(v);
+      }
+    }
+    int temp = color.replace(u, Black);
+    // int temp = color.get(u);
+    // System.out.println(String.format("Vertex %s, Color %s", u, temp ));
+  }
 }
