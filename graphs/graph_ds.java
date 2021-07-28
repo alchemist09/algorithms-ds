@@ -41,6 +41,10 @@ class Main {
     System.out.println("Predecessor:  " + dfs1.pred);
     System.out.println("Colors: " + dfs1.color);
     System.out.println("Edges for v1: " + g3.getEdges(1));
+
+    // Print Solution
+    System.out.println("\r\nSolution for DFS");
+    System.out.println(dfs1.solution(2));
   }
 }
 
