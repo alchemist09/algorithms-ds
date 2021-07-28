@@ -96,5 +96,8 @@ class Graph {
 
 
 class DepthFirstTraversal {
-  
+  // Coloring constants
+  private static final int White = 0;
+  private static final int Gray  = 1;
+  private static final int Black = 2;
 }
