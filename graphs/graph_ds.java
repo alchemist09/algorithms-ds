@@ -64,4 +64,16 @@ class Graph {
     List<Integer> adjacencList = edges.get(src);
     return adjacencList.contains(dest);
   }
+
+  /**
+   * Populate Graph with List of Edges
+   */
+  public void loadGraph(Map<Integer, ArrayList<Integer>> edges) {
+    for(int vertex: edges.keySet()) {
+      this.addVertex(vertex);
+      for(int neighbour: edges.get(vertex)) {
+        this.addEdge(vertex, neighbour);
+      }
+    }
+  }
 }
