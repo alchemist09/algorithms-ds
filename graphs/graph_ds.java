@@ -30,6 +30,10 @@ class Main {
     edgeList2.put(3, new ArrayList<Integer>(Arrays.asList(1)));
     edgeList2.put(4, new ArrayList<Integer>(Arrays.asList(2, 5)));
     edgeList2.put(5, new ArrayList<Integer>(Arrays.asList(1, 4)));
+
+    Graph g3 = new Graph();
+    g3.loadGraph(edgeList2);
+    System.out.println(g3.edges);
   }
 }
 
