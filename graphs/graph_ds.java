@@ -34,6 +34,13 @@ class Main {
     Graph g3 = new Graph();
     g3.loadGraph(edgeList2);
     System.out.println(g3.edges);
+
+    // Do A DFS
+    DepthFirstTraversal dfs1 = new DepthFirstTraversal(g3, 3);
+    // Print Predecessor 
+    System.out.println("Predecessor:  " + dfs1.pred);
+    System.out.println("Colors: " + dfs1.color);
+    System.out.println("Edges for v1: " + g3.getEdges(1));
   }
 }
 
