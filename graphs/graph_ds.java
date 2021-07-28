@@ -11,6 +11,15 @@ class Main {
     g.addVertex(3);
     g.addVertex(4);
     g.addVertex(5);
+
+    System.out.println(g.isEdge(2, 3));
+    g.addEdge(2, 3);
+    System.out.println(g.isEdge(2, 3));
+    System.out.println(g.isEdge(3, 2));
+    g.addEdge(2, 5);
+    System.out.println(g.isEdge(2, 5));
+    System.out.println(g.isEdge(2, 4));
+    System.out.println(g.edges);
   }
 }
 
