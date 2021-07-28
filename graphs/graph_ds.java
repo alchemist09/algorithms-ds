@@ -100,4 +100,9 @@ class DepthFirstTraversal {
   private static final int White = 0;
   private static final int Gray  = 1;
   private static final int Black = 2;
+
+  Graph graph;
+  Map<Integer, Integer> pred;
+  Map<Integer, Integer> color;
+  int start;
 }
