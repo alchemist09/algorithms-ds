@@ -48,4 +48,20 @@ class Graph {
       dest_adjacency_list.add(src);
     }
   }
+
+  /**
+   * Determines whether an edge exists
+   */ 
+  public boolean isEdge(int src, int dest) {
+    if(!edges.containsKey(src)) {
+      return false;
+    }
+
+    if(!edges.containsKey(dest)) {
+      return false;
+    }
+    
+    List<Integer> adjacencList = edges.get(src);
+    return adjacencList.contains(dest);
+  }
 }
