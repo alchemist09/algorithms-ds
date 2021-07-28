@@ -146,6 +146,11 @@ class DepthFirstTraversal {
     // System.out.println(String.format("Vertex %s, Color %s", u, temp ));
   }
 
+  /**
+   * Prints the order in which the vertices were traversed
+   * @param v vertex
+   * @return order otf traversal
+   */
   public List<Integer> solution(int v) {
     // vertex not within graph
     if(!graph.edges.containsKey(v)) {
