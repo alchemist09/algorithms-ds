@@ -130,6 +130,10 @@ class DepthFirstTraversal {
     this.dfs_visit(s);
   }
 
+  /**
+   * Do a DFS of the graph vertices
+   * @param u vertex from where to begin DFS traversal
+   */
   public void dfs_visit(int u) {
     // recursive traversal of graph using DFS
     color.put(u, Gray);
