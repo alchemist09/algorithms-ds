@@ -12,7 +12,7 @@ class Graph {
    * Constructs an empty graph
    */
   public Graph() {
-    
+    edges = new HashMap<Integer, ArrayList<Integer>>();
   }
 
   /**
