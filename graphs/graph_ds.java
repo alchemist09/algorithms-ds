@@ -20,6 +20,16 @@ class Main {
     System.out.println(g.isEdge(2, 5));
     System.out.println(g.isEdge(2, 4));
     System.out.println(g.edges);
+
+    // GRAPH TRAVERSAL 
+    System.out.println("\r\nGRAPH TRAVERSAL");
+    // Initialize the Adjacency List
+    Map<Integer, ArrayList<Integer>> edgeList2 = new HashMap<Integer, ArrayList<Integer>>();
+    edgeList2.put(1, new ArrayList<Integer>(Arrays.asList(2, 3, 5)));
+    edgeList2.put(2, new ArrayList<Integer>(Arrays.asList(1, 4)));
+    edgeList2.put(3, new ArrayList<Integer>(Arrays.asList(1)));
+    edgeList2.put(4, new ArrayList<Integer>(Arrays.asList(2, 5)));
+    edgeList2.put(5, new ArrayList<Integer>(Arrays.asList(1, 4)));
   }
 }
 
