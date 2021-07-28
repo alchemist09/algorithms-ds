@@ -145,4 +145,24 @@ class DepthFirstTraversal {
     // int temp = color.get(u);
     // System.out.println(String.format("Vertex %s, Color %s", u, temp ));
   }
+
+  public List<Integer> solution(int v) {
+    // vertex not within graph
+    if(!graph.edges.containsKey(v)) {
+      return null;
+    }
+
+    // Disconnected graph
+    if(pred.get(v) == null) {
+      return null;
+    }
+
+    List<Integer> path = new ArrayList<Integer>();
+    path.add(v);
+    while(v != start) {
+      v = pred.get(v);
+      path.add(0, v);
+    }
+    return path;
+  }
 }
