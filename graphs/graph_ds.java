@@ -83,4 +83,11 @@ class Graph {
   public boolean isEmpty() {
     return edges.size() == 0 ? true : false;
   }
+
+  /**
+   * Fetch all the edges of the graph
+   */
+  public List<Integer> getEdges(int u) {
+    return edges.get(u);
+  }
 }
