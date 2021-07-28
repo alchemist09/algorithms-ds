@@ -15,4 +15,14 @@ class Graph {
     edges = new HashMap<Integer, ArrayList<Integer>>();
     this.loadGraph(edgeList);
   }
+
+  /**
+   * Add a vertex
+   */
+  public void addVertex(int vertex) {
+    if(!edges.containsKey(vertex)) {
+      ArrayList<Integer> adjacencyList = new ArrayList<Integer>();
+      edges.put(vertex, adjacencyList);
+    }
+  }
 }
