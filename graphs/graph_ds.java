@@ -4,6 +4,12 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Arrays;
 
+class Main {
+  public static void main(String[] args) {
+    
+  }
+}
+
 class Graph {
 
   Map<Integer, ArrayList<Integer>> edges;
