@@ -6,7 +6,11 @@ import java.util.Arrays;
 
 class Main {
   public static void main(String[] args) {
-    
+    Graph g = new Graph();
+    g.addVertex(2);
+    g.addVertex(3);
+    g.addVertex(4);
+    g.addVertex(5);
   }
 }
 
