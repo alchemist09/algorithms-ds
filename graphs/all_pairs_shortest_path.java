@@ -7,7 +7,7 @@ import java.util.Collections;
 
 class Main {
   public static void main(String[] args) {
-    
+    Map<Integer, ArrayList<HashMap<Integer, Integer>>> graphEdges = new HashMap<Integer, ArrayList<HashMap<Integer, Integer>>>();
   }
 }
 
