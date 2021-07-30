@@ -46,6 +46,9 @@ class Main {
       )
     ));
 
+    DiGraph dg1 = new DiGraph();
+    dg1.loadGraph(graphEdges);
+
   }
 }
 
