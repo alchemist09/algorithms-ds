@@ -66,4 +66,26 @@ class DiGraph {
       adjacencyList.add(dst);
     }
   }
+
+  /**
+   * Determines whether an edge exists btwn a source and destination
+   * @param int src - The source vertex
+   * @param int dest - The destination vertex
+   * @return boolean - Returns true if an edge exists between two vertices, 
+                       false otheriwse
+   */ 
+  public boolean isEdge(int src, int dest) {
+    if(!edges.containsKey(src) || !edges.containsKey(dest)) {
+      return false;
+    }
+    
+    List<HashMap<Integer, Integer>> adjacencyList = edges.get(src);
+    for(Map<Integer, Integer> item : adjacencyList) {
+      Integer destValue = (Integer)item.keySet().toArray()[0];
+      if(destValue.intValue() == dest) {
+        return true;
+      }
+    }
+    return false;
+  }
 }
