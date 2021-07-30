@@ -1,3 +1,10 @@
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Arrays;
+import java.util.Collections;
+
 class DiGraph {
 
   Map<Integer, ArrayList<HashMap<Integer, Integer>>> edges;
