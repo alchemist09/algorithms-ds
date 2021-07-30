@@ -130,4 +130,21 @@ class AllPairsShortestPath {
   int[][] dist;
   int[][] pred;
   int N;
+
+  public AllPairsShortestPath(DiGraph dg) {
+    graph = dg;
+    N = graph.edges.keySet().size();
+    dist = new int[N][N];
+    pred = new int[N][N];
+
+    // Prefill every cell of dist[] table
+    for(int[] row : dist) {
+      Arrays.fill(row, Integer.MAX_VALUE);
+    }
+
+    // Prefill every cell of pred[] table
+    for(int[] row : pred) {
+      Arrays.fill(row, -1);
+    }
+  }
 }
