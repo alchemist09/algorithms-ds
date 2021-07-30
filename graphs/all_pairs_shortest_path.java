@@ -154,6 +154,19 @@ class AllPairsShortestPath {
              two vertices
    */
   public int[][] calculateAPSP() {
+    // populate the dist and pred tables with values from graph
+    for(int u=0; u < N; u++) {
+      for(int v=0; v < N; v++) {
+        if(u == v) {
+          dist[u][v] = 0;
+          // pred[u][v] = -1;
+        } else if(graph.isEdge(u, v)) {
+          dist[u][v] = graph.getEdgeWeight(u, v);
+          pred[u][v] = u;
+        } 
+      }
+    }
+    
     return dist;
   }
 }
