@@ -166,7 +166,22 @@ class AllPairsShortestPath {
         } 
       }
     }
-    
+
+    // Calculate shortest path between any two vertices and populate dist table 
+    // with the corresponding values
+    for(int mid=0; mid < N; mid++) {
+      for(int i=0; i < N; i++) {
+        for(int j=0; j < N; j++) {
+          if(dist[i][mid] != Integer.MAX_VALUE 
+            && dist[mid][j] != Integer.MAX_VALUE
+            && dist[i][mid] + dist[mid][j] < dist[i][j]) {
+              pred[i][j] = pred[mid][j];
+              dist[i][j] = dist[i][mid] + dist[mid][j];
+            }
+        }
+      }
+    }
+
     return dist;
   }
 }
