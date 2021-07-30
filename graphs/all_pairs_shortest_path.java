@@ -43,4 +43,27 @@ class DiGraph {
       edges.put(vertex, adjacencyList);
     }
   }
+
+  /**
+   * Add an edge
+   * @param int src - The source vertex
+   * @param int dest - The destination vertex
+   * @param int wgt - The weight associated with the edge
+   */
+  public void addEdge(int src, int dest, int wgt) {
+    // case where the source vertex doesn't exist within graph
+    if(!edges.containsKey(src)) {
+      // build the mapping of destination and weight
+      HashMap<Integer, Integer> dst = new HashMap<Integer, Integer>(1);
+      dst.put(dest, wgt);
+      edges.put(src, new ArrayList<HashMap<Integer, Integer>>(Arrays.asList(dst)));
+    } else {
+      // case where the source vertex already exists, we just add a directed
+      // edge to the destination vertex
+      HashMap<Integer, Integer> dst = new HashMap<Integer, Integer>(1);
+      dst.put(dest, wgt);
+      List<HashMap<Integer, Integer>> adjacencyList = edges.get(src);
+      adjacencyList.add(dst);
+    }
+  }
 }
