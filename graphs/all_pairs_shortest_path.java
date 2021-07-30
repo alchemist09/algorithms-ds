@@ -126,5 +126,8 @@ class DiGraph {
 }
 
 class AllPairsShortestPath {
-  
+  DiGraph graph;
+  int[][] dist;
+  int[][] pred;
+  int N;
 }
