@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Arrays;
 import java.util.Collections;
 
+@SuppressWarnings("serial")
 class Main {
   public static void main(String[] args) {
     Map<Integer, ArrayList<HashMap<Integer, Integer>>> graphEdges = new HashMap<Integer, ArrayList<HashMap<Integer, Integer>>>();
