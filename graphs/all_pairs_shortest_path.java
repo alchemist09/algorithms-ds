@@ -184,4 +184,21 @@ class AllPairsShortestPath {
 
     return dist;
   }
+
+  /**
+   * Construct the Shortest Path between two vertices
+   * @param src The starting vertex
+   * @param dest The end vertex
+   * @return Returns List whose entries are the order of vertices to the SP
+   */
+  public List<Integer> printPath(int src, int dest) {
+    List<Integer> path = new ArrayList<Integer>();
+    path.add(dest);
+    while(dest != src) {
+      int predVertex = pred[src][dest];
+      path.add(0, predVertex);
+      dest = predVertex;
+    }
+    return path;
+  }
 }
