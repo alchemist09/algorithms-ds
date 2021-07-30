@@ -5,6 +5,12 @@ import java.util.HashMap;
 import java.util.Arrays;
 import java.util.Collections;
 
+class Main {
+  public static void main(String[] args) {
+    
+  }
+}
+
 class DiGraph {
 
   Map<Integer, ArrayList<HashMap<Integer, Integer>>> edges;
