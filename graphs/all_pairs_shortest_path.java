@@ -134,8 +134,8 @@ class AllPairsShortestPath {
   public AllPairsShortestPath(DiGraph dg) {
     graph = dg;
     N = graph.edges.keySet().size();
-    dist = new int[N][N];
-    pred = new int[N][N];
+    dist = new int[N][N]; // distance between two nodes
+    pred = new int[N][N]; // predecessor of a particular node
 
     // Prefill every cell of dist[] table
     for(int[] row : dist) {
