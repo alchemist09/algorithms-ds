@@ -21,6 +21,31 @@ class Main {
     );
     graphEdges.put(0, destVertices);
 
+    graphEdges.put(1, new ArrayList<HashMap<Integer, Integer>>(
+      Arrays.asList(
+        new HashMap<Integer, Integer>(){{ put(2, 3); }}
+      )
+    ));
+
+    graphEdges.put(2, new ArrayList<HashMap<Integer, Integer>>(
+      Arrays.asList(
+        new HashMap<Integer, Integer>(){{ put(3, 5); }},
+        new HashMap<Integer, Integer>(){{ put(4, 1); }}
+      )
+    ));
+
+    graphEdges.put(3, new ArrayList<HashMap<Integer, Integer>>(
+      Arrays.asList(
+        new HashMap<Integer, Integer>(){{ put(0, 8); }}
+      )
+    ));
+
+    graphEdges.put(4, new ArrayList<HashMap<Integer, Integer>>(
+      Arrays.asList(
+        new HashMap<Integer, Integer>(){{ put(3, 7); }}
+      )
+    ));
+
   }
 }
 
