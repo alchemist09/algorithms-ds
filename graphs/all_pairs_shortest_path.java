@@ -11,6 +11,16 @@ class Main {
 
     // Specifiy the connections amongst vertices and respective edge weights
     ArrayList<HashMap<Integer, Integer>> destVertices = new ArrayList<HashMap<Integer, Integer>>();
+
+    // Add Vertices That Are Destinations of Source Vertex - 0
+    destVertices.addAll(
+      Arrays.asList(
+        new HashMap<Integer, Integer>(){{ put(1, 2); }},
+        new HashMap<Integer, Integer>(){{ put(4, 4); }}
+      ) 
+    );
+    graphEdges.put(0, destVertices);
+
   }
 }
 
