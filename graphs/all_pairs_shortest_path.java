@@ -147,4 +147,13 @@ class AllPairsShortestPath {
       Arrays.fill(row, -1);
     }
   }
+
+  /**
+   * Calculate the Shortest Path Between Any Two Vertices
+   * @return Returns matrix whose entries are weights of shortest path btwn any
+             two vertices
+   */
+  public int[][] calculateAPSP() {
+    return dist;
+  }
 }
