@@ -49,6 +49,18 @@ class Main {
     DiGraph dg1 = new DiGraph();
     dg1.loadGraph(graphEdges);
 
+    // Calculating Shortest Path Between Any Two Vertices
+    System.out.println("\r\nCalculating Shortest Path Between Any Two Vertices");
+    AllPairsShortestPath APSP = new AllPairsShortestPath(dg1);
+    System.out.println("SP 0 - 2: " + APSP.calculateAPSP()[0][2]);
+    System.out.println("SP 0 - 2 Path: " + APSP.printPath(0, 2));
+    System.out.println();
+    System.out.println("SP 3 - 1: " + APSP.calculateAPSP()[3][1]);
+    System.out.println("SP 3 - 1 Path: " + APSP.printPath(3, 1));
+    System.out.println();
+    System.out.println("SP 1 - 4: " + APSP.calculateAPSP()[1][4]);
+    System.out.println("SP 1 - 4 Path: " + APSP.printPath(1, 4));
+
   }
 }
 
