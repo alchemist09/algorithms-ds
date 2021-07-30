@@ -8,6 +8,9 @@ import java.util.Collections;
 class Main {
   public static void main(String[] args) {
     Map<Integer, ArrayList<HashMap<Integer, Integer>>> graphEdges = new HashMap<Integer, ArrayList<HashMap<Integer, Integer>>>();
+
+    // Specifiy the connections amongst vertices and respective edge weights
+    ArrayList<HashMap<Integer, Integer>> destVertices = new ArrayList<HashMap<Integer, Integer>>();
   }
 }
 
