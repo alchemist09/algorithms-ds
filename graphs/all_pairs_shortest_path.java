@@ -124,3 +124,7 @@ class DiGraph {
     return edges.get(u);
   }
 }
+
+class AllPairsShortestPath {
+  
+}
