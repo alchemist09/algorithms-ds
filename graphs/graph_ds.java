@@ -197,7 +197,7 @@ class DepthFirstTraversal {
         this.dfs_visit(v);
       }
     }
-    int temp = color.replace(u, Black);
+    color.replace(u, Black);
     // int temp = color.get(u);
     // System.out.println(String.format("Vertex %s, Color %s", u, temp ));
   }
