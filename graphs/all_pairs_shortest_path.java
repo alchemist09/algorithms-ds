@@ -10,6 +10,14 @@ class DiGraph {
   }
 
   /**
+   * Initializes a graph from an adjacency list 
+   */
+  public DiGraph(Map<Integer, ArrayList<HashMap<Integer, Integer>>> edgeList) {
+    edges = new HashMap<Integer, ArrayList<HashMap<Integer, Integer>>>();
+    this.loadGraph(edgeList);
+  }
+
+  /**
    * Populate Graph with List of Edges
    * @param Map edges - The Adjacency list representation of the graph
    */
