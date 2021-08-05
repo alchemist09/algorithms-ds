@@ -1,0 +1,6 @@
+class Graph {
+
+  public Graph() {
+    
+  }
+}
