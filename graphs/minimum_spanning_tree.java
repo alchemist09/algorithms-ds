@@ -1,6 +1,6 @@
-class Graph {
+class Graph2 {
 
-  public Graph() {
-    
+  public Graph2() {
+
   }
 }
