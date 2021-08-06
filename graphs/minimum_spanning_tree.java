@@ -52,4 +52,18 @@ class Graph2 {
       adjacentVertices.put(src, wgt);
     }
   }
+
+  /**
+   * Determines whether an edge exists between two vertices
+   */ 
+  public boolean isEdge(int src, int dest) {
+    if(!edges.containsKey(src)) {
+      return false;
+    }
+
+    if(!edges.containsKey(dest)) {
+      return false;
+    }
+    return true;
+  }
 }
