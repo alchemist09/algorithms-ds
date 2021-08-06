@@ -32,4 +32,24 @@ class Graph2 {
       edges.put(vertex, adjacencyMap);
     }
   }
+
+  /**
+   * Add an edge between two vertices (u, v) in the graph
+   * @param src - The source vertex
+   * @param dest - The destination vertex
+   * @param wgt - The weight associated with the edge
+   */
+  public void addEdge(int src, int dest, int wgt) {
+    HashMap<Integer, Integer> adjacentVertices;
+    if(!edges.containsKey(src)) {
+      edges.put(src, new HashMap<Integer, Integer>(){{ put(dest, wgt); }});
+    } else if(!edges.containsKey(dest)) {
+      edges.put(dest, new HashMap<Integer, Integer>(){{ put(src, wgt); }});
+    } else {
+      adjacentVertices = edges.get(src);
+      adjacentVertices.put(dest, wgt);
+      adjacentVertices = edges.get(dest);
+      adjacentVertices.put(src, wgt);
+    }
+  }
 }
