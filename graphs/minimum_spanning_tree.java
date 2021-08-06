@@ -1,5 +1,6 @@
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Iterator;
 
 
 class Graph2 {
@@ -20,5 +21,15 @@ class Graph2 {
   public Graph2(Map<Integer, HashMap<Integer, Integer>> edgesMap) {
     edges = new HashMap<Integer, HashMap<Integer, Integer>>();
     this.loadGraph(edgesMap);
+  }
+
+  /**
+   * Add a vertex
+   */
+  public void addVertex(int vertex) {
+    if(!edges.containsKey(vertex)) {
+      HashMap<Integer, Integer> adjacencyMap = new HashMap<Integer, Integer>();
+      edges.put(vertex, adjacencyMap);
+    }
   }
 }
