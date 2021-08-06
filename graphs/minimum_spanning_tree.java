@@ -73,13 +73,10 @@ class Graph2 {
   public void loadGraph(Map<Integer, HashMap<Integer, Integer>> edgesMap) {
     for(Map.Entry<Integer, HashMap<Integer, Integer>> entry : edgesMap.entrySet()) {
       Integer startVert = entry.getKey();
-      System.out.println("Start Vert: " + startVert.intValue());
       HashMap<Integer, Integer> connectionsPair = entry.getValue();
-      System.out.println("Connection Pair: " + connectionsPair);
       Iterator<Map.Entry<Integer, Integer>> iterMap = connectionsPair.entrySet().iterator();
       while(iterMap.hasNext()) {
         Map.Entry<Integer, Integer> pair = (Map.Entry<Integer,Integer>)iterMap.next();
-        System.out.println("Pair: " + pair);
         this.addEdge(startVert, pair.getKey(), pair.getValue());
       }
       System.out.println("\r\n");
