@@ -79,7 +79,6 @@ class Graph2 {
         Map.Entry<Integer, Integer> pair = (Map.Entry<Integer,Integer>)iterMap.next();
         this.addEdge(startVert, pair.getKey(), pair.getValue());
       }
-      System.out.println("\r\n");
     }
   }
 }
