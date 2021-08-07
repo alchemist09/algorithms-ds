@@ -122,3 +122,9 @@ class MapComparator implements Comparator<Map<Integer, Integer>> {
     return map1_key - map2_key;
   }
 }
+
+class Edge implements Comparable<Edge> {
+  public int compareTo(Edge other) {
+    return 0;
+  }
+}
