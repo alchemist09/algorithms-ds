@@ -133,8 +133,14 @@ class Edge implements Comparable<Edge> {
     to = dest;
     weight = wgt;
   }
-  
+
   public int compareTo(Edge other) {
-    return 0;
+    if(this.weight < other.weight) {
+      return -1;
+    } else if(this.weight > other.weight) {
+      return 1;
+    } else {
+      return 0;
+    }
   }
 }
