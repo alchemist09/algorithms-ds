@@ -88,4 +88,25 @@ class Graph2 {
   public boolean isEmpty() {
     return edges.size() == 0 ? true : false;
   }
+
+  /**
+   * Get the weight associated with a particular edge
+   * @param src The source vertex
+   * @param dest The destination vertex
+   * @return the edge weight
+   */
+  public int getEdgeWeight(int src, int dest) {
+    if(!this.isEdge(src, dest)) {
+      return -1;
+    }
+    HashMap<Integer, Integer> endVertWgtPairs = edges.get(src);
+    Iterator<Map.Entry<Integer, Integer>> iterMap = endVertWgtPairs.entrySet().iterator();
+    while(iterMap.hasNext()) {
+      Map.Entry<Integer, Integer> pair = (Map.Entry<Integer, Integer>)iterMap.next();
+      if(pair.getKey().intValue() == dest) {
+        return pair.getValue().intValue();
+      }
+    }
+    return -1;
+  }
 }
