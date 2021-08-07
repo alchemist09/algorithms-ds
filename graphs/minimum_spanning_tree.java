@@ -1,6 +1,7 @@
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Comparator;
 
 
 class Graph2 {
@@ -108,5 +109,16 @@ class Graph2 {
       }
     }
     return -1;
+  }
+}
+
+
+
+
+class MapComparator implements Comparator<Map<Integer, Integer>> {
+  public int compare(Map<Integer, Integer> map1, Map<Integer, Integer> map2) {
+    int map1_key = map1.entrySet().iterator().next().getKey().intValue();
+    int map2_key = map2.entrySet().iterator().next().getKey().intValue();
+    return map1_key - map2_key;
   }
 }
