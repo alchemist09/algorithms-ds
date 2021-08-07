@@ -124,6 +124,16 @@ class MapComparator implements Comparator<Map<Integer, Integer>> {
 }
 
 class Edge implements Comparable<Edge> {
+  int from;
+  int to;
+  int weight;
+
+  public Edge(int src, int dest, int wgt) {
+    from = src;
+    to = dest;
+    weight = wgt;
+  }
+  
   public int compareTo(Edge other) {
     return 0;
   }
