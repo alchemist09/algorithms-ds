@@ -2,6 +2,8 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Comparator;
+import java.util.Queue;
+import java.util.PriorityQueue;
 
 
 class Graph2 {
@@ -146,8 +148,13 @@ class Edge implements Comparable<Edge> {
 }
 
 class PrimMST {
+  Graph2 G;
+  Queue<Edge> MstEdges;
+  int mstWeight;
+  boolean[] marked;
+  PriorityQueue<Edge> PQ;
 
   public PrimMST(Graph2 g) {
-    
+
   }
 }
