@@ -177,4 +177,21 @@ class PrimMST {
       }
     }
   }
+
+  /**
+   * Compute the minimum spanning tree
+   * @param src - The source vertex from which to start computation
+   */
+  public void ComputeMST(int src) {
+    this.visit(src);
+    while(!PQ.isEmpty()) {
+      Edge e = PQ.remove();
+      // if either edge has been visited, the edge is ineligible, move to next edge
+      if(marked[e.from] && marked[e.to]) continue;
+      MstEdges.add(e);
+      mstWeight += e.weight;
+      if(!marked[e.from]) this.visit(e.from);
+      if(!marked[e.to]) this.visit(e.to);
+    }
+  }
 }
