@@ -194,4 +194,12 @@ class PrimMST {
       if(!marked[e.to]) this.visit(e.to);
     }
   }
+
+  /**
+   * Get the minimum spanning tree value
+   * @return
+   */
+  public int costOfMST() {
+    return mstWeight;
+  }
 }
