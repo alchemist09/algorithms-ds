@@ -5,6 +5,8 @@ import java.util.Comparator;
 import java.util.Queue;
 import java.util.PriorityQueue;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.ArrayList;
 
 
 class Graph2 {
@@ -201,5 +203,20 @@ class PrimMST {
    */
   public int costOfMST() {
     return mstWeight;
+  }
+
+  /**
+   * Print the edges that make up the minimum spanning tree
+   */
+  public void printMSTedges() {
+    List<List<Integer>> edges = new ArrayList<List<Integer>>();
+    for(Edge e : MstEdges) {
+      List<Integer> pair = new ArrayList<Integer>();
+      pair.add(e.from);
+      pair.add(e.to);
+      // add pair to edges
+      edges.add(pair);
+    }
+    System.out.println("MST Edges: " + edges);
   }
 }
