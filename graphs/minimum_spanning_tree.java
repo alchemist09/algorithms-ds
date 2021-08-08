@@ -144,3 +144,10 @@ class Edge implements Comparable<Edge> {
     }
   }
 }
+
+class PrimMST {
+
+  public PrimMST(Graph2 g) {
+    
+  }
+}
