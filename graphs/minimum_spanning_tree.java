@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.Comparator;
 import java.util.Queue;
 import java.util.PriorityQueue;
+import java.util.LinkedList;
 
 
 class Graph2 {
@@ -155,6 +156,9 @@ class PrimMST {
   PriorityQueue<Edge> PQ;
 
   public PrimMST(Graph2 g) {
-
+    G = g;
+    MstEdges = new LinkedList<Edge>();
+    PQ = new PriorityQueue<Edge>();
+    marked = new boolean[G.edges.keySet().size()+1];
   }
 }
