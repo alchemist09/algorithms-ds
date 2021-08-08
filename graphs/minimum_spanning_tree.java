@@ -161,4 +161,20 @@ class PrimMST {
     PQ = new PriorityQueue<Edge>();
     marked = new boolean[G.edges.keySet().size()+1];
   }
+
+  /**
+   * Visit a node in the graph
+   * @param v Integer denoting a node in the graph
+   */
+  public void visit(int v) {
+    marked[v] = true;
+    HashMap<Integer, Integer> adj = G.edges.get(v);
+    for(Map.Entry<Integer, Integer> pair : adj.entrySet()) {
+      int neigh = pair.getKey().intValue();
+      int weight = pair.getValue().intValue();
+      if(!marked[neigh]) {
+        PQ.add(new Edge(v, neigh, weight));
+      }
+    }
+  }
 }
