@@ -12,6 +12,52 @@ class Main2 {
   public static void main(String[] args) {
     // Initialize edges map used to populate the graph
     Map<Integer, HashMap<Integer, Integer>> edgesMap = new HashMap<Integer, HashMap<Integer, Integer>>();
+
+    edgesMap.put(1, new HashMap<Integer, Integer>()
+      {{ 
+         put(2, 2);
+         put(3, 4); 
+      }}
+    );
+
+    edgesMap.put(2, new HashMap<Integer, Integer>()
+      {{ 
+         put(1, 2);
+         put(4, 7);
+         put(3, 1); 
+      }}
+    );
+
+    edgesMap.put(3, new HashMap<Integer, Integer>()
+      {{ 
+         put(1, 4);
+         put(2, 1);
+         put(5, 3);
+      }}
+    );
+
+    edgesMap.put(4, new HashMap<Integer, Integer>()
+      {{ 
+         put(2, 7);
+         put(5, 2);
+         put(6, 1); 
+      }}
+    );
+
+    edgesMap.put(5, new HashMap<Integer, Integer>()
+      {{ 
+         put(3, 3);
+         put(4, 2);
+         put(6, 5);
+      }}
+    );
+
+    edgesMap.put(6, new HashMap<Integer, Integer>()
+      {{ 
+         put(4, 1);
+         put(5, 5);
+      }}
+    );
   }
 }
 
