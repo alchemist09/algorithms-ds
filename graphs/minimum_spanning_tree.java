@@ -8,6 +8,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ArrayList;
 
+class Main2 {
+  public static void main(String[] args) {
+    
+  }
+}
 
 class Graph2 {
 
