@@ -58,6 +58,15 @@ class Main2 {
          put(5, 5);
       }}
     );
+
+    // Load the Edges Map
+    Graph2 G1 = new Graph2(edgesMap);
+    System.out.println(G1.edges);
+    System.out.println("\r\nPrim's Minimum Spanning Tree");
+    PrimMST pmst = new PrimMST(G1);
+    pmst.ComputeMST(1);
+    pmst.printMSTedges();
+    System.out.println("MST Cost: " + pmst.costOfMST());
   }
 }
 
