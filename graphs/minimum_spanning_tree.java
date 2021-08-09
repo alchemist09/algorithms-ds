@@ -10,7 +10,8 @@ import java.util.ArrayList;
 
 class Main2 {
   public static void main(String[] args) {
-    
+    // Initialize edges map used to populate the graph
+    Map<Integer, HashMap<Integer, Integer>> edgesMap = new HashMap<Integer, HashMap<Integer, Integer>>();
   }
 }
 
