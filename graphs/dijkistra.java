@@ -4,10 +4,9 @@ import java.util.List;
 import java.util.ArrayList;
 
 
-class DiGraph {
+class DiGraph2 {
   Map<Integer, ArrayList<HashMap<Integer, Integer>>> edges;
 
-  public DiGraph() {
-    
+  public DiGraph2() {
   }
 }
