@@ -113,4 +113,12 @@ class DiGraph2 {
   public boolean isEmpty() {
     return edges.size() == 0 ? true : false;
   }
+
+  /**
+   * Returns edges that a particular vertex is directed towards
+   * @param int u - The vertex for which its edges are being retrieved
+   */
+  public List<HashMap<Integer, Integer>> getEdges(int u) {
+    return edges.get(u);
+  }
 }
