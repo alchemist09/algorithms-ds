@@ -86,4 +86,24 @@ class DiGraph2 {
       }
     }
   }
+
+  /**
+   * Get the weight associated with an edge 
+   * @param src The source vertex of the edge
+   * @param dest The destination vertex of the edge
+   * @return int The weight associated with the edge
+   */
+  public int getEdgeWeight(int src, int dest) {
+    if(!this.isEdge(src, dest)) {
+      return Integer.MAX_VALUE;
+    }
+    ArrayList<HashMap<Integer, Integer>> adjList = edges.get(src);
+    for(HashMap<Integer, Integer> destVertex : adjList) {
+      if(destVertex.containsKey(dest)) {
+        Integer wgt = destVertex.get(dest);
+        return wgt.intValue();
+      }
+    }
+    return Integer.MAX_VALUE;
+  }
 }
