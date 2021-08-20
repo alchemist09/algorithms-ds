@@ -106,4 +106,11 @@ class DiGraph2 {
     }
     return Integer.MAX_VALUE;
   }
+
+  /**
+   * Checks whether graph is empty, i.e has no vertices
+   */
+  public boolean isEmpty() {
+    return edges.size() == 0 ? true : false;
+  }
 }
