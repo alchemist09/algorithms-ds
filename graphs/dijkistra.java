@@ -125,7 +125,7 @@ class DiGraph2 {
   }
 }
 
-class MapComparator implements Comparator<Map<Integer, Integer>> {
+class MapComparator2 implements Comparator<Map<Integer, Integer>> {
   public int compare(Map<Integer, Integer> map1, Map<Integer, Integer> map2) {
     Set<Integer> map1_keys = map1.keySet();
     Set<Integer> map2_keys = map2.keySet();
