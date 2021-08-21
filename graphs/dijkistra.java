@@ -3,6 +3,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Set;
 
 
 class DiGraph2 {
@@ -120,5 +122,15 @@ class DiGraph2 {
    */
   public List<HashMap<Integer, Integer>> getEdges(int u) {
     return edges.get(u);
+  }
+}
+
+class MapComparator implements Comparator<Map<Integer, Integer>> {
+  public int compare(Map<Integer, Integer> map1, Map<Integer, Integer> map2) {
+    Set<Integer> map1_keys = map1.keySet();
+    Set<Integer> map2_keys = map2.keySet();
+    Integer[] dist1 = map1_keys.toArray(new Integer[map1_keys.size()]);
+    Integer[] dist2 = map2_keys.toArray(new Integer[map2_keys.size()]);
+    return dist1[0].intValue() - dist2[0].intValue();
   }
 }
