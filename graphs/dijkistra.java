@@ -134,3 +134,12 @@ class MapComparator2 implements Comparator<Map<Integer, Integer>> {
     return dist1[0].intValue() - dist2[0].intValue();
   }
 }
+
+class Dijkistra {
+  // Directed Graph on which to find the shortest path
+  DiGraph2 Graph;
+
+  public Dijkistra(DiGraph2 G) {
+    Graph = G;
+  }
+}
