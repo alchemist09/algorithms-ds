@@ -4,8 +4,8 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Arrays;
 
-@SuppressWarnings("serial")
-class Main2 {
+
+class Main3 {
   public static void main(String[] args) {
     Map<Integer, ArrayList<HashMap<Integer, Integer>>> graphEdges = new HashMap<Integer, ArrayList<HashMap<Integer, Integer>>>();
 
