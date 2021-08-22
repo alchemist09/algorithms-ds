@@ -139,6 +139,9 @@ class Dijkistra {
   // Directed Graph on which to find the shortest path
   DiGraph2 Graph;
 
+  // Map to keep track of the predecessor vertex while calculating shortest path
+  Map<Integer, Integer> pred = new HashMap<Integer, Integer>();
+
   public Dijkistra(DiGraph2 G) {
     Graph = G;
   }
