@@ -170,6 +170,9 @@ class Dijkistra {
       pred.put(adjVertex.getKey(), src);
     }
 
+    // Distance of src vertex from itself is zero
+    D.put(src, 0);
+
     Map<Integer, Integer> result = new HashMap<>();
     return result;
   }
