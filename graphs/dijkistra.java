@@ -145,4 +145,14 @@ class Dijkistra {
   public Dijkistra(DiGraph2 G) {
     Graph = G;
   }
+
+  /**
+   * Calculates shortest path from source vertex to every other vertex on map
+   * @param src
+   * @return
+   */
+  public Map<Integer, Integer> ShortestPath(int src) {
+    Map<Integer, Integer> result = new HashMap<>();
+    return result;
+  }
 }
