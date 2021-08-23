@@ -199,18 +199,13 @@ class Dijkistra {
       Map.Entry<Integer, Integer> mapEntry = distVertMap.entrySet().iterator().next();
       Integer u = mapEntry.getValue();
       cloud.add(u);
-      // System.out.println("\r\nu: " + u);
-      // System.out.println("Graph Vertices Adjacent to u: " + Graph.edges.get(u));
       
       // Get all vertices adjacent to u on its outging edges
       for(Map<Integer, Integer> vertObj : Graph.edges.get(u)) {
         Map.Entry<Integer, Integer> currEntry = vertObj.entrySet().iterator().next();
-        // System.out.println("Current Entry: " + currEntry);
         Integer v = currEntry.getKey();
-        // System.out.println("v: " + v);
         if(!cloud.contains(v) && D.get(v) != null) {
           int wgt = Graph.getEdgeWeight(u.intValue(), v.intValue());
-          // System.out.println("Weight w(u:" + u + ",v:" + v +")" + wgt + "\r\n");
           if(D.get(u) + wgt < D.get(v)) {
             D.put(v, (D.get(u) + wgt));
             pred.put(v, u);
