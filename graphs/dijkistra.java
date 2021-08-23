@@ -161,6 +161,15 @@ class Dijkistra {
       D.put(vertex, Integer.MAX_VALUE);
     }
 
+    // Set the weights of vertices connected to src as initial values in D
+    List<HashMap<Integer, Integer>> adjToSrc = Graph.edges.get(src);
+    for(Map<Integer, Integer> vertDistPair : adjToSrc) {
+      Map.Entry<Integer, Integer> adjVertex = vertDistPair.entrySet().iterator().next();
+      D.put(adjVertex.getKey(), adjVertex.getValue());
+      // Specify the src vertex as the predecessor of the vertices it connects to
+      pred.put(adjVertex.getKey(), src);
+    }
+
     Map<Integer, Integer> result = new HashMap<>();
     return result;
   }
