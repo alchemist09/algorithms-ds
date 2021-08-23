@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Set;
+import java.util.PriorityQueue;
 
 
 class DiGraph2 {
@@ -172,6 +173,12 @@ class Dijkistra {
 
     // Distance of src vertex from itself is zero
     D.put(src, 0);
+
+    // Initialize a PriorityQueue that holds key-value pairs of (distance-vertex)
+    // maps, where distance(key) is the distance of the value(vertex) from
+    // the start vertex
+    PriorityQueue<Map<Integer, Integer>> PQ = 
+    new PriorityQueue<Map<Integer, Integer>>(new MapComparator2());
 
     Map<Integer, Integer> result = new HashMap<>();
     return result;
