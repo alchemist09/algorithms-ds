@@ -180,6 +180,16 @@ class Dijkistra {
     PriorityQueue<Map<Integer, Integer>> PQ = 
     new PriorityQueue<Map<Integer, Integer>>(new MapComparator2());
 
+    // Add all vertices to priority queue
+    for(Map.Entry<Integer, Integer> entry : D.entrySet()) {
+      int vertex = entry.getKey();
+      int dist = entry.getValue();
+      if(vertex == src) {
+        continue;
+      }
+      PQ.add(new HashMap<Integer, Integer>(1){{ put(dist, vertex); }});
+    }
+
     Map<Integer, Integer> result = new HashMap<>();
     return result;
   }
