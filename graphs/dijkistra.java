@@ -152,6 +152,15 @@ class Dijkistra {
    * @return
    */
   public Map<Integer, Integer> ShortestPath(int src) {
+    Set<Integer> vertices = Graph.edges.keySet();
+
+    // Initialize a distance map D, that holds the best known distance of 
+    // every vertex v in G from src
+    Map<Integer, Integer> D = new HashMap<Integer, Integer>();
+    for(Integer vertex : vertices) {
+      D.put(vertex, Integer.MAX_VALUE);
+    }
+
     Map<Integer, Integer> result = new HashMap<>();
     return result;
   }
