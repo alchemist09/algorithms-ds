@@ -221,7 +221,6 @@ class Dijkistra {
       }
     }
 
-    Map<Integer, Integer> result = new HashMap<>();
-    return result;
+    return D;
   }
 }
