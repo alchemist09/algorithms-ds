@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Set;
+import java.util.HashSet;
 import java.util.PriorityQueue;
 
 
@@ -189,6 +190,9 @@ class Dijkistra {
       }
       PQ.add(new HashMap<Integer, Integer>(1){{ put(dist, vertex); }});
     }
+
+    Set<Integer> cloud = new HashSet<Integer>();
+    cloud.add(src);
 
     Map<Integer, Integer> result = new HashMap<>();
     return result;
