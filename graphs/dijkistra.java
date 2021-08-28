@@ -218,4 +218,23 @@ class Dijkistra {
 
     return D;
   }
+
+  /**
+   * Return the sequence of vertices followed to arrive at the shortest
+   * path from specified start vertex to end vertex
+   * @param src - The start vertex
+   * @param dest - The end vertex
+   * @return List - The shortest path
+   */
+  public List<Integer> GetShortestPath(int src, int dest) {
+    List<Integer> path = new ArrayList<Integer>();
+    path.add(dest);
+    System.out.println("\r\n");
+    while(dest != src) {
+      System.out.println("dest: " + dest);
+      dest = pred.get(dest);
+      path.add(0, dest);
+    }
+    return path;
+  }
 }
