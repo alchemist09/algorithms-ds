@@ -229,9 +229,7 @@ class Dijkistra {
   public List<Integer> GetShortestPath(int src, int dest) {
     List<Integer> path = new ArrayList<Integer>();
     path.add(dest);
-    System.out.println("\r\n");
     while(dest != src) {
-      System.out.println("dest: " + dest);
       dest = pred.get(dest);
       path.add(0, dest);
     }
