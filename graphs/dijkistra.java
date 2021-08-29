@@ -8,6 +8,12 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.PriorityQueue;
 
+class Main4 {
+  public static void main(String[] args) {
+    
+  }
+}
+
 
 class DiGraph2 {
   Map<Integer, ArrayList<HashMap<Integer, Integer>>> edges;
