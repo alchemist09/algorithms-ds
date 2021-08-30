@@ -56,6 +56,11 @@ class Main4 {
         new HashMap<Integer, Integer>(){{ put(Integer.MAX_VALUE, 0); }}
       )
     ));
+
+    System.out.println("\r\nFinding the Shortest Path from a Source Vertex");
+    DiGraph2 G = new DiGraph2();
+    Dijkistra DJK = new Dijkistra(G);
+    DJK.ShortestPath(1);
   }
 }
 
