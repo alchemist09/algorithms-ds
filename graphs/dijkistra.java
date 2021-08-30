@@ -62,6 +62,7 @@ class Main4 {
     Dijkistra DJK = new Dijkistra(G);
     DJK.ShortestPath(1);
     System.out.println("Direction of SP: " + DJK.GetShortestPath(1, 6));
+    System.out.println("Total Cost of SP: " + DJK.GetShortestPathValue(1, 6));
   }
 }
 
