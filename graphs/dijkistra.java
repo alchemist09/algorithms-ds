@@ -61,6 +61,7 @@ class Main4 {
     DiGraph2 G = new DiGraph2();
     Dijkistra DJK = new Dijkistra(G);
     DJK.ShortestPath(1);
+    System.out.println("Direction of SP: " + DJK.GetShortestPath(1, 6));
   }
 }
 
@@ -298,5 +299,16 @@ class Dijkistra {
       path.add(0, dest);
     }
     return path;
+  }
+
+  /**
+   * Get the value in terms of the weight of the shortest path
+   * @param src - The start vertex
+   * @param dest - The end vertex
+   * @return The cummulative edge weight value of the shortest path
+   */
+  public int GetShortestPathValue(int src, int dest) {
+    Map<Integer, Integer> SP_Values = this.ShortestPath(src);
+    return SP_Values.get(dest).intValue();
   }
 }
