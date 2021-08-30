@@ -12,6 +12,50 @@ class Main4 {
   public static void main(String[] args) {
     Map<Integer, ArrayList<HashMap<Integer, Integer>>> graphEdges =
     new HashMap<Integer, ArrayList<HashMap<Integer, Integer>>>();
+
+    // Add vertices adjacent to vertex 1
+    graphEdges.put(1, new ArrayList<HashMap<Integer, Integer>>(
+      Arrays.asList(
+        new HashMap<Integer, Integer>(){{ put(2, 2); }},
+        new HashMap<Integer, Integer>(){{ put(3, 4); }}
+      )
+    ));
+
+    // Add vertices adjacent to vertex 2
+    graphEdges.put(2, new ArrayList<HashMap<Integer, Integer>>(
+      Arrays.asList(
+        new HashMap<Integer, Integer>(){{ put(4, 7); }},
+        new HashMap<Integer, Integer>(){{ put(3, 1); }}
+      )
+    ));
+
+    // Add vertices adjacent to vertex 3
+    graphEdges.put(3, new ArrayList<HashMap<Integer, Integer>>(
+      Arrays.asList(
+        new HashMap<Integer, Integer>(){{ put(5, 3); }}
+      )
+    ));
+
+    // Add vertices adjacent to vertex 4
+    graphEdges.put(4, new ArrayList<HashMap<Integer, Integer>>(
+      Arrays.asList(
+        new HashMap<Integer, Integer>(){{ put(6, 1); }}
+      )
+    ));
+
+    // Add vertices adjacent to vertex 5
+    graphEdges.put(5, new ArrayList<HashMap<Integer, Integer>>(
+      Arrays.asList(
+        new HashMap<Integer, Integer>(){{ put(6, 5); }},
+        new HashMap<Integer, Integer>(){{ put(4, 2); }}
+      )
+    ));
+
+    graphEdges.put(6, new ArrayList<HashMap<Integer, Integer>>(
+      Arrays.asList(
+        new HashMap<Integer, Integer>(){{ put(Integer.MAX_VALUE, 0); }}
+      )
+    ));
   }
 }
 
