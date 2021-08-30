@@ -76,6 +76,14 @@ class DiGraph2 {
   }
 
   /**
+   * Initializes a graph from an adjacency list 
+   */
+  public DiGraph2(Map<Integer, ArrayList<HashMap<Integer, Integer>>> edgeList) {
+    edges = new HashMap<Integer, ArrayList<HashMap<Integer, Integer>>>();
+    this.loadGraph(edgeList);
+  }
+
+  /**
    * Add a vertex
    * @param int vertex - A vertex on the graph
    */
