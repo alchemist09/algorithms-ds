@@ -24,11 +24,7 @@ class NQueens {
    * @return True/False whether queen can be placed on a certain cell
    */
   public boolean canPlaceQueen(int k, int thisCol) {
-    // System.out.println("nTuple: " + Arrays.asList(nTuple));
     for(int currRow=0; currRow < k; currRow++) {
-      // System.out.println("nTuple[currRow]: " + nTuple[currRow]);
-      // System.out.println("nTuple[currRow].intValue(): " + nTuple[currRow].intValue());
-      // System.out.println("\r\n");
       if(nTuple[currRow].intValue() == thisCol ||
          (Math.abs(nTuple[currRow].intValue() - thisCol) == Math.abs(k-currRow))) {
           return false;
