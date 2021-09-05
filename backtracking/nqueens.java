@@ -8,6 +8,10 @@ class NQueens {
   Integer[] nTuple;
   List<Integer[]> solutions;
 
+  /**
+   * Coonstructor
+   * @param no_of_queens - number of queens to be placed on chess board without attacking each other
+   */
   public NQueens(int no_of_queens) {
     count = 0;
     num_queens = no_of_queens;
