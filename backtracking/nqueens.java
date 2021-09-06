@@ -54,7 +54,6 @@ class NQueens {
           Integer[] result = nTuple.clone();
           solutions.add(result);
           count++;
-          // System.out.println("||||||||||Solution: " + Arrays.asList(nTuple) + "\r\n");
           return true;
         }
         arrangeQueens(row + 1); 
