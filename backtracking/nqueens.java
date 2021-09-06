@@ -61,4 +61,14 @@ class NQueens {
     }
     return false;
   }
+
+  /**
+   * Prints the different formations that were possible to place the queens
+   */
+  public void printAllSolutions() {
+    System.out.println("Solution Size: " + solutions.size());
+    for(Integer[] soln : solutions) {
+      System.out.println(Arrays.asList(soln));
+    }
+  }
 }
