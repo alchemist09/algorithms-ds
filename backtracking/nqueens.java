@@ -71,4 +71,11 @@ class NQueens {
       System.out.println(Arrays.asList(soln));
     }
   }
+
+  /**
+   * Prints the number of different ways it possible to place N-queens on board
+   */
+  public void numSolutions() {
+    System.out.println("No. of solutions: " + count);
+  }
 }
