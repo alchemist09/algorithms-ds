@@ -36,4 +36,30 @@ class NQueens {
     }
     return true;
   }
+
+  /**
+   * Tries to place all queens on chess board
+   * @param row - row on chessboard
+   * @return true if it succeeded placing all queens on chess board, false otherwise
+   */
+  public boolean arrangeQueens(int row) {
+    if(row == num_queens) {
+      return true;
+    }
+
+    for(int col=0; col < num_queens; col++) {
+      if(this.canPlaceQueen(row, col)) {
+        nTuple[row] = col;
+        if(row == (num_queens -1)) {
+          Integer[] result = nTuple.clone();
+          solutions.add(result);
+          count++;
+          // System.out.println("||||||||||Solution: " + Arrays.asList(nTuple) + "\r\n");
+          return true;
+        }
+        arrangeQueens(row + 1); 
+      }
+    }
+    return false;
+  }
 }
