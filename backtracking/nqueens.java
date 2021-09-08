@@ -2,6 +2,15 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 
+class Main5 {
+  public static void main(String[] args) {
+    NQueens NQ = new NQueens(4);
+    NQ.arrangeQueens(0);
+    NQ.printAllSolutions();
+    NQ.numSolutions();
+  }
+}
+
 class NQueens {
   int count;
   int num_queens;
