@@ -25,7 +25,7 @@ class NQueens {
     count = 0;
     num_queens = no_of_queens;
     nTuple = new Integer[no_of_queens];
-    Arrays.fill(nTuple, new Integer(-1));
+    Arrays.fill(nTuple, Integer.valueOf(-1));
     solutions = new ArrayList<Integer[]>();
     System.out.println("Constructor nTuple: " + Arrays.asList(nTuple) + "\r\n");
   }
