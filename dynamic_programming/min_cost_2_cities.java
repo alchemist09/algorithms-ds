@@ -48,8 +48,6 @@ package dynamic_programming;
 * moving from i to N-1.
 */
 
-import java.util.Arrays;
-
 class MinCostBtwn2Cities {
   public static void main(String[] args) {
     int[][] cost = {
