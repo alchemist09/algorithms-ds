@@ -51,7 +51,15 @@ package dynamic_programming;
 
 class MinCostBtwn2Cities {
   public static void main(String[] args) {
-    
+    int[][] cost = {
+			{ 0, 25, 20, 10, 105 },
+      { 20, 0, 15, 80, 80 },
+      { 30, 15, 0, 70, 90 },
+      { 10, 10, 50, 0, 100 },
+      { 40, 50, 5, 10, 0}
+		};
+
+    System.out.println(minCost(cost, 2, 4));
   }
 
   /**
