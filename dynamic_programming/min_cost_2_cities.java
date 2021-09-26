@@ -59,7 +59,15 @@ class MinCostBtwn2Cities {
       { 40, 50, 5, 10, 0}
 		};
 
+    int[][] cost2 = {
+			{0, 10, 75, 94},
+			{-1, 0, 35, 50},
+			{-1, -1, 0, 80},
+			{-1, -1, -1, 0}
+		};
+
     System.out.println(minCost(cost, 2, 4));
+    System.out.println(minCostMemo(cost2, 0, 3));
   }
 
   /**
