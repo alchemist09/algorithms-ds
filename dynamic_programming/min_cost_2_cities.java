@@ -86,4 +86,35 @@ class MinCostBtwn2Cities {
 		}
 		return min_cost;
 	}
+
+  /**
+   * Calculates the minimum cost of travel between 2 cities using Top-Down Memoization approach
+   * @param cost The fair table presented as a 2D matrix
+   * @param s Source of journey
+   * @param d Destination of journey
+   * @return Minimum cost of travel between s and d
+   */
+  public static int minCostMemo(int[][] cost, int s, int d) {
+		// specify base cases 
+		if(s==d || s+1==d) {
+			return cost[s][d];
+		}
+		
+		int N = cost.length;
+		int[][] cache = new int[N][N];
+		
+		if(cache[s][d] == 0) {
+			int min_cost = cost[s][d];
+			for(int i=s+1; i < d; i++) {
+				int temp = minCostMemo(cost, s, i) + minCostMemo(cost, i, d);
+				if(temp < min_cost) {
+					min_cost = temp;
+				}
+			}
+			// store the minimum cost in cache 
+			cache[s][d] = min_cost;
+		}
+		// otherwise return previously computed value
+		return cache[s][d];
+	}
 }
