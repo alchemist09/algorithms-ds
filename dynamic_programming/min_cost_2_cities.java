@@ -48,6 +48,7 @@ package dynamic_programming;
 * moving from i to N-1.
 */
 
+import java.util.Arrays;
 
 class MinCostBtwn2Cities {
   public static void main(String[] args) {
@@ -124,5 +125,30 @@ class MinCostBtwn2Cities {
 		}
 		// otherwise return previously computed value
 		return cache[s][d];
+	}
+
+  /**
+   * Calculate the minimum cost of travel between 2 cities using bottom-up dynamic programming
+   * @param cost 2D matrix representing the cost of travel between any 2 cities
+   * @param d The last destination possible given the fare table
+   * @return minimum cost of travel between any 2 cities
+   */
+  public static int minCostDP(int[][] cost, int d) {
+		int N = cost.length;
+		int[] min_cost = new int[N];
+		min_cost[1] = cost[0][1];
+		
+		for(int i=2; i <= d; i++) {
+			min_cost[i] = cost[0][i];
+			// check if sum of minimum costs of all the intermediate 
+			// stations is less than cost of going direct
+			for(int j=1; j < i; j++) {
+				if(min_cost[i] > min_cost[j] + cost[j][i]) {
+					min_cost[i] = min_cost[j] + cost[j][i];
+				}
+			}
+		}
+		System.out.println(Arrays.toString(min_cost));
+		return min_cost[d];
 	}
 }
