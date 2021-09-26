@@ -69,6 +69,7 @@ class MinCostBtwn2Cities {
 
     System.out.println(minCost(cost, 2, 4));
     System.out.println(minCostMemo(cost2, 0, 3));
+    System.out.println(minCostDP(cost2, 3));
   }
 
   /**
