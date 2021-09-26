@@ -149,7 +149,6 @@ class MinCostBtwn2Cities {
 				}
 			}
 		}
-		System.out.println(Arrays.toString(min_cost));
 		return min_cost[d];
 	}
 }
