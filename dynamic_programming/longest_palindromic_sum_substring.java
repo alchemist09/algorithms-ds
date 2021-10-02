@@ -33,4 +33,37 @@ class LongestPalindromicSumSubstring {
     
     return maxLen;
   }
+
+  public static int longestPalindromicSumSubstring2(String s) {
+		if(s.length() == 0) { return 0; }
+		if(s.length() == 1) { return 1; }
+		int N = s.length();
+		int maxLen = 0;
+		
+		for(int i=0; i < N; i++) {
+			for(int j=i+1; j < N; j+=2) {
+				int substring_length = (j-i) + 1;
+				
+				// if maxLen greater than length of current substring, do nothing
+				if(maxLen > substring_length) {
+					continue;
+				}
+				
+				int half_len = (int)Math.floor(substring_length/2);
+				int lSum=0;
+				int rSum=0;
+				
+				// loop through either half of the substring computing sum of lSum and rSum
+				for(int k=0; k < substring_length/2; k++) {
+					lSum += Integer.parseInt(String.valueOf(s.charAt(i+k)));
+					rSum += Integer.parseInt(String.valueOf(s.charAt(i+k+half_len)));
+				}
+				
+				if(lSum == rSum) {
+					maxLen = substring_length;
+				}
+			}
+		}
+		return maxLen;
+	}
 }
