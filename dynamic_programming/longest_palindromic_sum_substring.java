@@ -5,6 +5,13 @@ class LongestPalindromicSumSubstring {
   public static void main(String[] args) {
     String str1 = "13267224";
 		System.out.println("longest palindromic sum substring of 13267224: " + longestPalindromicSumSubstring(str1));
+
+    String str2 = "146281";
+		String str3 = "546374";
+		
+		System.out.println();
+		System.out.println("longest palindromic sum substring of 146281: " + longestPalindromicSumSubstring2(str2));
+		System.out.println("longest palindromic sum substring of 546374: " + longestPalindromicSumSubstring2(str3));
   }
 
   public static int longestPalindromicSumSubstring(String str) {
