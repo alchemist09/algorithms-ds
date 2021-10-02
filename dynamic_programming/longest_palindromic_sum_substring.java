@@ -107,6 +107,29 @@ class LongestPalindromicSumSubstring {
 		return maxLen;
 	}
 
+  public static int expand(String str, int low, int high, int max) {
+		// variables to keep track of left sum and right sum of substring 
+		int leftSum = 0;
+		int rightSum = 0;
+		
+		while(low >= 0 && high < str.length()) {
+			// expand in both directions
+			leftSum  += (str.charAt(low) - '0');
+			rightSum += (str.charAt(high) - '0');
+			
+			// check if leftSum and rightSum are equal
+			if(leftSum == rightSum && (high - low) + 1 > max) {
+				max = (high - low) + 1;
+			}
+			
+			// expand in both directions
+			low--;
+			high++;
+		}
+		
+		return max;
+	}
+
   public static int longestPalindromicSumSubstringAlt(String str) {
 		int maxLen = 0;
 		
