@@ -73,4 +73,33 @@ class LongestPalindromicSumSubstring {
 		}
 		return maxLen;
 	}
+
+  public static int longestPalindromicSumSubstringDP(String str) {
+		int N = str.length();
+		int maxLen = 0;
+		int[][] sumTable = new int[N][N];
+		
+		// fill diagonals where i == j, single length substring 
+		for(int i=0; i < N; i++) {
+			sumTable[i][i] = (str.charAt(i) - '0');
+		}
+		
+		for(int len=2; len <= N; len++) {
+			for(int i=0; i < N - len + 1; i++) {
+				int j = i + len - 1;
+				int mid = len / 2;
+				
+				// sumTable[i][j] equals sum of substring from [i-mid] and from [mid-j]
+				sumTable[i][j] = sumTable[i][j-mid] + sumTable[j-mid+1][j];
+				
+				// if substring is even length, check if either half is equal and whether
+				// current length substring exceeds len 
+				if(N % 2 == 0 && sumTable[i][j-mid] == sumTable[j-mid+1][j] && len > maxLen) {
+					maxLen = len;
+				}
+			}
+		}
+		
+		return maxLen;
+	}
 }
