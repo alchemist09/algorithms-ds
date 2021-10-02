@@ -106,4 +106,15 @@ class LongestPalindromicSumSubstring {
 		
 		return maxLen;
 	}
+
+  public static int longestPalindromicSumSubstringAlt(String str) {
+		int maxLen = 0;
+		
+		// for every adjacent pair of characters as midpoints and expand in both directions
+		for(int low=0; low < str.length() - 1; low++) {
+			maxLen = expand(str, low, low + 1, maxLen);
+		}
+		
+		return maxLen;
+	}
 }
