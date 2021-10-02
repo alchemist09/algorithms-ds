@@ -16,6 +16,10 @@ class LongestPalindromicSumSubstring {
     System.out.println("\r\nDynamic Programming");
 		System.out.println("DP - longest palindromic sum substring of 146281: " + longestPalindromicSumSubstringDP(str2));
 		System.out.println("DP longest palindromic sum substring of 546374: " + longestPalindromicSumSubstringDP(str3));
+
+    System.out.println("\r\nAlternative Solution");
+		System.out.println("ALT - longest palindromic sum substring of 146281: " + longestPalindromicSumSubstringAlt(str2));
+		System.out.println("ALT longest palindromic sum substring of 546374: " + longestPalindromicSumSubstringAlt(str3));
   }
 
   public static int longestPalindromicSumSubstring(String str) {
