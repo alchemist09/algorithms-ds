@@ -2,7 +2,10 @@ package dynamic_programming;
 
 class LongestCommonSubstring {
   public static void main(String[] args) {
-    
+    String str1 = "abc";
+		String str2 = "a";
+
+    System.out.println(lcs(str1, str2));
   }
 
   public static int lcs(String a, String b) {
