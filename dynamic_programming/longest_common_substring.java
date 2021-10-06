@@ -5,7 +5,11 @@ class LongestCommonSubstring {
     String str1 = "abc";
 		String str2 = "a";
 
+    String str3 = "m12345";
+		String str4 = "n12345";
+
     System.out.println(lcs(str1, str2));
+    System.out.println(lcs2(str3, str4));
   }
 
   public static int lcs(String a, String b) {
