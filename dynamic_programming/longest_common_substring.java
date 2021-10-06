@@ -1,3 +1,9 @@
+/**
+ * Problem 1 - Given 2 Strings, calculate the length of the longest common substring between them
+ * Problem 2 - Given 2 Strings, return a substring that is the longest common substring between them
+ */
+
+
 package dynamic_programming;
 
 class LongestCommonSubstring {
