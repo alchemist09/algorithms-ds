@@ -2,7 +2,21 @@ package dynamic_programming;
 
 class MinimumPathSumGrid {
   public static void main(String[] args) {
-    
+    int[][] costMatrix = {
+      {1, 3, 5, 8},
+      {4, 2, 1, 7},
+      {4, 3, 2, 3}
+    };
+
+    int[][] grid = {
+      {1, 3, 1},
+      {1, 5, 1},
+      {4, 2, 1}
+    };
+
+    System.out.println("Brute Force");
+		System.out.println("[costMatrix] - Minimum cost path to cell (2, 3): " + minimumCostPath(costMatrix, 2, 3));
+		System.out.println("[grid] - Minimum cost path to cell (2, 2): " + minimumCostPath(grid, 2, 2));
   }
 
   public static int getMin(int x, int y) {
