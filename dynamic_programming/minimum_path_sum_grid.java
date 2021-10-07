@@ -1,3 +1,15 @@
+/**
+ * Given a two-dimensional square matrix cost[][] of order M*N where cost[i][j] 
+ * represent the cost of passing through cell(i,j). Total cost to reach a particular
+ * cell is the sum of costs of all cells in that path (including the starting and
+ * final cell). We can only move either downward or rightward. i.e, if we are at
+ * cell(i, j), the we can either go to (i+1, j) or (i, j+1)
+ * 
+ * Write a function that return the minimum cost of moving from the top-left cell
+ * to the bottom-right cell of the matrix. The first matrix below shows the cost
+ * matrix while the second one shows the minimum cost path in that matrix.
+ */
+
 package dynamic_programming;
 
 import java.util.Arrays;
