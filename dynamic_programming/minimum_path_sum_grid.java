@@ -5,6 +5,10 @@ class MinimumPathSumGrid {
     
   }
 
+  public static int getMin(int x, int y) {
+    return x < y ? x : y;
+  }
+
   public static int minimumCostPath(int[][] cost, int m, int n) {
     // cell at top left
     if(m==0 && n==0) {
