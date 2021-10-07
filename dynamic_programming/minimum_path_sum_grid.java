@@ -1,5 +1,7 @@
 package dynamic_programming;
 
+import java.util.Arrays;
+
 class MinimumPathSumGrid {
   public static void main(String[] args) {
     int[][] costMatrix = {
@@ -17,6 +19,24 @@ class MinimumPathSumGrid {
     System.out.println("Brute Force");
 		System.out.println("[costMatrix] - Minimum cost path to cell (2, 3): " + minimumCostPath(costMatrix, 2, 3));
 		System.out.println("[grid] - Minimum cost path to cell (2, 2): " + minimumCostPath(grid, 2, 2));
+
+    System.out.println("\r\nMemoization");
+		int cm_len = costMatrix.length;
+		int cm_wid = costMatrix[0].length;
+		int[][] memo1 = new int[cm_len][cm_wid];
+		for(int i=0; i < cm_len; i++) {
+		    Arrays.fill(memo1[i], Integer.MIN_VALUE);
+		}
+		
+		int gridL = grid.length;
+		int gridW= grid[0].length;
+		int[][] memo2 = new int[gridL][gridW];
+		for(int i=0; i < gridL; i++) {
+		    Arrays.fill(memo2[i], Integer.MIN_VALUE);
+		}
+		
+		System.out.println("[costMatrix] - Minimum cost path to cell (2, 3): " + minimumCostPathMemo(costMatrix, memo1, 2, 3));
+		System.out.println("[grid] - Minimum cost path to cell (2, 2): " + minimumCostPathMemo(grid, memo2, 2, 2));
   }
 
   public static int getMin(int x, int y) {
