@@ -44,4 +44,33 @@ class MinimumPathSumGrid {
     
     return getMin(x, y) + cost[m][n];
   }
+
+  public static int minimumCostPathMemo(int[][] cost, int[][]cache, int m, int n) {
+	    
+    // if value already exists in cache, return value 
+    if(cache[m][n] != Integer.MIN_VALUE) {
+        return cache[m][n];
+    }
+    
+    // top left cell 
+    if(m == 0 && n == 0) {
+        return cost[0][0];
+    }
+    
+    // top most row - we can only approach cell from left 
+    if(m == 0) {
+       return minimumCostPathMemo(cost, cache, m, n-1) + cost[0][n];
+    }
+    
+    // left most column - we can only approach cell from top 
+    if(n == 0) {
+        return minimumCostPathMemo(cost, cache, m-1, n) + cost[m][0];
+    }
+    
+    int x = minimumCostPathMemo(cost, cache, m-1, n);
+    int y = minimumCostPathMemo(cost, cache, m, n-1);
+    
+    cache[m][n] = getMin(x, y) + cost[m][n];
+    return cache[m][n];
+  }
 }
