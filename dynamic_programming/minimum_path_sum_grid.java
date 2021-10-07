@@ -88,4 +88,37 @@ class MinimumPathSumGrid {
     cache[m][n] = getMin(x, y) + cost[m][n];
     return cache[m][n];
   }
+
+  /**
+   * Use Bottom-Up Dynamic Programming Approach to calculate the minimum cost path through grid
+   * @param cost Cost matrix
+   * @param m Target cell along Y-axis
+   * @param n Target cell along X-axis
+   * @return Minimum cost to reach cell mn in grid
+   */
+  public static int minimumCostPathDP(int[][] cost, int m, int n) {
+    int[][] dp = new int[m+1][n+1];
+    
+    // top left
+    dp[0][0] = cost[0][0];
+    
+    // top most row 
+    for(int j=1; j <= n; j++) {
+        dp[0][j] = dp[0][j-1] + cost[0][j];
+    }
+    
+    // left most column 
+    for(int i=1; i <= m; i++) {
+        dp[i][0] = dp[i-1][0] + cost[i][0];
+    }
+    
+    // fill the rest of the cells 
+    for(int i=1; i <= m; i++) {
+        for(int j=1; j <= n; j++) {
+            dp[i][j] = getMin(dp[i-1][j], dp[i][j-1]) + cost[i][j];
+        }
+    }
+    
+    return dp[m][n];
+  }
 }
