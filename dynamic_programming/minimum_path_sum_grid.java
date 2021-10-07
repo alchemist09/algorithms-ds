@@ -23,6 +23,13 @@ class MinimumPathSumGrid {
     return x < y ? x : y;
   }
 
+  /**
+   * Brute Force Approach of Calculating the minimum cost of reaching specified cell in grid
+   * @param cost Grid outlining the cost of moving through cells
+   * @param m Target cell along Y-axis
+   * @param n Target cell along X-axis
+   * @return minimum cost incurred to reach cell mn
+   */
   public static int minimumCostPath(int[][] cost, int m, int n) {
     // cell at top left
     if(m==0 && n==0) {
@@ -45,6 +52,14 @@ class MinimumPathSumGrid {
     return getMin(x, y) + cost[m][n];
   }
 
+  /**
+   * Use Top-Down Memoization approach to calculate the minimum cost path sum in grid
+   * @param cost Grid representing the cost incurred by passing through specific cells
+   * @param cache Stores pre-computed problems 
+   * @param m Cell value on Y-axis
+   * @param n Cell value on X-axis
+   * @return The minimmum cost one incurs to reach cell mn
+   */
   public static int minimumCostPathMemo(int[][] cost, int[][]cache, int m, int n) {
 	    
     // if value already exists in cache, return value 
