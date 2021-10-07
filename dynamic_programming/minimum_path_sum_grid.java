@@ -37,6 +37,10 @@ class MinimumPathSumGrid {
 		
 		System.out.println("[costMatrix] - Minimum cost path to cell (2, 3): " + minimumCostPathMemo(costMatrix, memo1, 2, 3));
 		System.out.println("[grid] - Minimum cost path to cell (2, 2): " + minimumCostPathMemo(grid, memo2, 2, 2));
+
+    System.out.println("\r\nDynamic Programming");
+		System.out.println("[costMatrix] - Minimum cost path to cell (2, 3): " + minimumCostPathDP(costMatrix, 2, 3));
+		System.out.println("[grid] - Minimum cost path to cell (2, 2): " + minimumCostPathDP(grid, 2, 2));
   }
 
   public static int getMin(int x, int y) {
