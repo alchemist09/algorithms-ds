@@ -74,14 +74,15 @@ class FloorTiling {
    * @return Count of unique ways to tile the floor
    */
   public static long floorTilingDP2(int floor_length) {
-    int a = 1, b = 2, c;
-    
-    for(b=3; b <= floor_length; c++) {
+    int a = 1, b = 2; // initial values for floor length 1 and 2
+    int c=0; // count unique ways
+	  
+	  for(int len=3; len <= floor_length; len++) {
       c = a + b;
-      b = c;
       a = b;
-    }
+      b = c;
+	  }
     
-    return b;
+	  return c;
   }
 }
