@@ -67,4 +67,21 @@ class FloorTiling {
     
     return num_ways[floor_length];
   }
+
+  /**
+   * Bottom-Up Dynamic Programming approach with O(1) space
+   * @param floor_length Length of the floor
+   * @return Count of unique ways to tile the floor
+   */
+  public static long floorTilingDP2(int floor_length) {
+    int a = 1, b = 2, c;
+    
+    for(b=3; b <= floor_length; c++) {
+      c = a + b;
+      b = c;
+      a = b;
+    }
+    
+    return b;
+  }
 }
