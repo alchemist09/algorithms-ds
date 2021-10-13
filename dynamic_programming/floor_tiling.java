@@ -1,3 +1,12 @@
+/**
+ * Given an empty plot of size 2 x n. We want to place tiles such that the plot is
+ * entirely covered. Each tile is of size 2 x 1 and can either be placed vertically
+ * or horizontally.
+ * 
+ * Write a function that accepts n as input and returns the total number of ways
+ * in which we can place the tiles (without breaking the tiles).
+ */
+
 package dynamic_programming;
 
 import java.util.Arrays;
