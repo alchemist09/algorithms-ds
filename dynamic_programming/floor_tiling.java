@@ -7,6 +7,7 @@ class FloorTiling {
     System.out.println("Floor Tiling Brute Force: " + floorTiling(10));
     System.out.println("Floor Tiling Memoization: " + floorTilingMemo(10));
     System.out.println("Floor Tiling DP - O(N) Space: " + floorTilingDP(10));
+    System.out.println("Floor Tiling DP - O(1) Space: " + floorTilingDP2(10));
   }
 
   /**
@@ -82,7 +83,7 @@ class FloorTiling {
       a = b;
       b = c;
 	  }
-    
+
 	  return c;
   }
 }
