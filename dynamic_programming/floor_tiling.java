@@ -28,5 +28,24 @@ class FloorTiling {
     long[] memo = new long[floor_length + 1];
     Arrays.fill(memo, -1);
     return floorTilingUtil(memo, floor_length);
- }
+  }
+
+  /**
+   * Recursively calculates way to fit tiles in floor of specified size
+   * @param cache Lookup table for storing overlapping subproblems
+   * @param N Length of floor
+   * @return No. of unique ways to tile floor
+   */
+  private static long floorTilingUtil(long[] cache, int N) {
+    if(N <= 0) { return 0; }
+    if(N == 1) { return 1; }
+    if(N == 2) { return 2; }
+    
+    if(cache[N] != -1) {
+      return cache[N];
+    }
+    
+    cache[N] = floorTilingUtil(cache, N-2) + floorTilingUtil(cache, N-1);
+    return cache[N];
+  }
 }
