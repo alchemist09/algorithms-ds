@@ -49,4 +49,21 @@ class FloorTiling {
     cache[N] = floorTilingUtil(cache, N-2) + floorTilingUtil(cache, N-1);
     return cache[N];
   }
+
+  /**
+   * Bottom-Up Dynamic Programming approach with O(n) Space
+   * @param floor_length Length of the floor
+   * @return Count of unique ways to place tiles on the floor
+   */
+  public static long floorTilingDP(int floor_length) {
+    long[] num_ways = new long[floor_length + 1];
+    num_ways[1] = 1;
+    num_ways[2] = 2;
+    
+    for(int length=3; length <= floor_length; length++) {
+        num_ways[length] = num_ways[length - 1] + num_ways[length - 2];
+    }
+    
+    return num_ways[floor_length];
+  }
 }
