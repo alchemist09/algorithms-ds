@@ -5,6 +5,7 @@ import java.util.Arrays;
 class FloorTiling {
   public static void main(String[] args) {
     System.out.println("Floor Tiling Brute Force: " + floorTiling(10));
+    System.out.println("Floor Tiling Memoization: " + floorTilingMemo(10));
   }
 
   /**
