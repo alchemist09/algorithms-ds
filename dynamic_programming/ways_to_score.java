@@ -2,7 +2,7 @@ package dynamic_programming;
 
 class WaysToScore {
   public static void main(String[] args) {
-    
+    System.out.println("Ways to Score[Brute Force] 13: " + waysToScoreBF(13));
   }
 
   /**
@@ -20,5 +20,5 @@ class WaysToScore {
     }
     
     return waysToScoreBF(targetScore - 10) + waysToScoreBF(targetScore - 5) + waysToScoreBF(targetScore - 3);
-}
+  }
 }
