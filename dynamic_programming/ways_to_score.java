@@ -7,6 +7,7 @@ class WaysToScore {
     int N = 13;
 		int[] cache = new int[N + 1];
 		System.out.println("Ways to Score[Memo] 13: " + waysToScoreMemo(cache, 13));
+    System.out.println("Ways to Score[DP] 13: " + waysToScoreDP(13));
   }
 
   /**
