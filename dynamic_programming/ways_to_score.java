@@ -3,6 +3,10 @@ package dynamic_programming;
 class WaysToScore {
   public static void main(String[] args) {
     System.out.println("Ways to Score[Brute Force] 13: " + waysToScoreBF(13));
+
+    int N = 13;
+		int[] cache = new int[N + 1];
+		System.out.println("Ways to Score[Memo] 13: " + waysToScoreMemo(cache, 13));
   }
 
   /**
@@ -41,5 +45,5 @@ class WaysToScore {
                         + waysToScoreMemo(scores, targetScore - 3);
    
    return scores[targetScore];
-}
+  }
 }
