@@ -46,4 +46,30 @@ class WaysToScore {
    
    return scores[targetScore];
   }
+
+  /**
+   * Calculate ways to reach target score using bottom-up dynamic programming
+   * @param targetScore The score being targeted
+   * @return Unique count of ways to reach target score
+   */
+  public static int waysToScoreDP(int targetScore) {
+    int[] scores = new int[targetScore + 1];
+    scores[0] = 1;
+    
+    for(int i=1; i <= targetScore; i++) {
+        if(i-3 >= 0) {
+            scores[i] = scores[i-3] + scores[i];
+        }
+        
+        if(i-5 >= 0) {
+            scores[i] = scores[i-5] + scores[i];
+        }
+        
+        if(i-10 >= 0) {
+            scores[i] = scores[i-10] + scores[i];
+        }
+    }
+    
+    return scores[targetScore];
+  }
 }
