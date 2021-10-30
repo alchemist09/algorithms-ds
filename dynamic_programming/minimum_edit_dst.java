@@ -9,12 +9,12 @@ class MinimumEditDistance {
 
   public static int minEditDistance(String str1, String str2) {
     // if str1 is empty or null, we need to insert characters of str2
-    if(str1 == null || str1 == "") {
+    if(str1 == null || str1.length() == 0) {
       return str2.length();
     }
 
     // if str2 is empty or null, we need to delete all characters of str1
-    if(str2 == null || str2 == "") {
+    if(str2 == null || str2.length() == 0) {
       return str1.length();
     }
 
