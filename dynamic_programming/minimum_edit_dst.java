@@ -32,6 +32,16 @@ class MinimumEditDistance {
     i = minEditDistance(str1, str2.substring(1));
 
     // return minimum of the three values + 1
-    return Math.min(d, u, i) + 1;
+    return getMin(d, u, i) + 1;
+  }
+
+  public static int getMin(int x, int y, int z) {
+    if(x < y && x < z) {
+      return x;
+    } else if(y < x && y < z) {
+      return y;
+    } else {
+      return z;
+    }
   }
 }
