@@ -2,7 +2,9 @@ package dynamic_programming;
 
 class MinimumEditDistance {
   public static void main(String[] args) {
-    
+    String str1 = "CAT";
+		String str2 = "CARE";
+		System.out.println(minEditDistance(str1, str2));
   }
 
   public static int minEditDistance(String str1, String str2) {
