@@ -36,12 +36,6 @@ class MinimumEditDistance {
   }
 
   public static int getMin(int x, int y, int z) {
-    if(x < y && x < z) {
-      return x;
-    } else if(y < x && y < z) {
-      return y;
-    } else {
-      return z;
-    }
+    return (x < y) ? ((x < z) ? x : z) : ((y < z) ? y : z );
   }
 }
