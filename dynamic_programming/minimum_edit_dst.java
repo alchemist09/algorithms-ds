@@ -7,6 +7,13 @@ class MinimumEditDistance {
 		System.out.println(minEditDistance(str1, str2));
   }
 
+  /**
+   * Get the minimum number of deletions, insertions and updations needed
+   * to convert one string into another using brute force approach
+   * @param str1 The First string
+   * @param str2 The Second string 
+   * @return minumum no. of edits required to convert str1 into str2
+   */
   public static int minEditDistance(String str1, String str2) {
     // if str1 is empty or null, we need to insert characters of str2
     if(str1 == null || str1.length() == 0) {
@@ -35,6 +42,13 @@ class MinimumEditDistance {
     return getMin(d, u, i) + 1;
   }
 
+  /**
+   * Gets the minimum of three integers
+   * @param x first integer
+   * @param y second integer
+   * @param z third integer
+   * @return minimum value amongst three integers
+   */
   public static int getMin(int x, int y, int z) {
     return (x < y) ? ((x < z) ? x : z) : ((y < z) ? y : z );
   }
