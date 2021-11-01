@@ -1,5 +1,7 @@
 package dynamic_programming;
 
+import java.util.Arrays;
+
 class MinimumEditDistance {
   public static void main(String[] args) {
     String str1 = "CAT";
@@ -51,5 +53,43 @@ class MinimumEditDistance {
    */
   public static int getMin(int x, int y, int z) {
     return (x < y) ? ((x < z) ? x : z) : ((y < z) ? y : z );
+  }
+
+  public static int minEditDistanceDP(String word1, String word2) {
+    int m = word1.length();
+    int n = word2.length();
+    
+    int[][] T = new int[m+1][n+1];
+    
+    for(int i=0; i < T.length; i++) {
+        Arrays.fill(T[i], -1);
+    }
+    
+    System.out.println(Arrays.deepToString(T));
+    
+    // fill left most column where word2 is empty
+    for(int i=0; i <= m; i++) {
+        T[i][0] = i;
+    }
+    
+    // fill the top most row where word1 is empty
+    for(int j=0; j <= n; j++) {
+        T[0][j] = j;
+    }
+    
+    // fill rest of the cache table
+    for(int i=1; i <= m; i++) {
+      for(int j=1; j <= n; j++) {
+        if(word1.charAt(i-1) == word2.charAt(j-1)) {
+            T[i][j] = T[i-1][j-1];
+        } else {
+            int tempMin = getMin(T[i-1][j], T[i][j-1]);
+            T[i][j] = getMin(tempMin, T[i-1][j-1]) + 1;
+        }
+      }
+    }
+    
+    System.out.println(Arrays.deepToString(T));
+    return T[m][n];
   }
 }
