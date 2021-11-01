@@ -7,6 +7,10 @@ class MinimumEditDistance {
     String str1 = "CAT";
 		String str2 = "CARE";
 		System.out.println(minEditDistance(str1, str2));
+
+    String str3 = "SUNDAY";
+    String str4 = "SATURDAY";
+    System.out.println(minEditDistanceDP(str3, str4));
   }
 
   /**
