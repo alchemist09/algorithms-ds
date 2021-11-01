@@ -55,6 +55,13 @@ class MinimumEditDistance {
     return (x < y) ? ((x < z) ? x : z) : ((y < z) ? y : z );
   }
 
+  /**
+   * Calculate the minimum number  of edits need to change word1 into word2 
+   * using bottom-up dynamic programming approach
+   * @param word1 the first word
+   * @param word2 the second word
+   * @return minimum no. of edits needed to convert one word into another
+   */
   public static int minEditDistanceDP(String word1, String word2) {
     int m = word1.length();
     int n = word2.length();
@@ -93,6 +100,12 @@ class MinimumEditDistance {
     return T[m][n];
   }
 
+  /**
+   * Get the minimum between two integer values
+   * @param a integer value
+   * @param b integer value
+   * @return the minmum of 2 integer values
+   */
   public static int getMin2(int a, int b) {
     return (a < b) ? a : b;
   }
