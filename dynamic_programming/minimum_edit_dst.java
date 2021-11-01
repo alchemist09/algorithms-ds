@@ -83,13 +83,17 @@ class MinimumEditDistance {
         if(word1.charAt(i-1) == word2.charAt(j-1)) {
             T[i][j] = T[i-1][j-1];
         } else {
-            int tempMin = getMin(T[i-1][j], T[i][j-1]);
-            T[i][j] = getMin(tempMin, T[i-1][j-1]) + 1;
+            int tempMin = getMin2(T[i-1][j], T[i][j-1]);
+            T[i][j] = getMin2(tempMin, T[i-1][j-1]) + 1;
         }
       }
     }
     
     System.out.println(Arrays.deepToString(T));
     return T[m][n];
+  }
+
+  public static int getMin2(int a, int b) {
+    return (a < b) ? a : b;
   }
 }
