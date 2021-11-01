@@ -111,8 +111,6 @@ class MinimumEditDistance {
         Arrays.fill(T[i], -1);
     }
     
-    System.out.println(Arrays.deepToString(T));
-    
     // fill left most column where word2 is empty
     for(int i=0; i <= m; i++) {
         T[i][0] = i;
@@ -135,7 +133,6 @@ class MinimumEditDistance {
       }
     }
     
-    System.out.println(Arrays.deepToString(T));
     return T[m][n];
   }
 
