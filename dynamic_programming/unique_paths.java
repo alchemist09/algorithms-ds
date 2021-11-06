@@ -4,6 +4,11 @@ import java.util.Arrays;
 
 class UniquePaths {
   public static void main(String[] args) {
+    System.out.println("Brute Force======================");
+    System.out.println(uniquePathsBF(2, 5));
+    System.out.println(uniquePathsBF(7, 3));
+
+    System.out.println("\r\nMemoization======================");
     System.out.println(uniquePathsBF(2, 5));
     System.out.println(uniquePathsBF(7, 3));
   }
