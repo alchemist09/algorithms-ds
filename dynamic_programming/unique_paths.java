@@ -11,6 +11,10 @@ class UniquePaths {
     System.out.println("\r\nMemoization======================");
     System.out.println(uniquePathsBF(2, 5));
     System.out.println(uniquePathsBF(7, 3));
+
+    System.out.println("\r\nDynamic Programming======================");
+    System.out.println(uniquePathsBF(2, 5));
+    System.out.println(uniquePathsBF(7, 3));
   }
 
   public static int uniquePathsBF(int m, int n) {
