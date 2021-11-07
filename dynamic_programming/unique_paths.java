@@ -48,4 +48,30 @@ class UniquePaths {
     System.out.println(Arrays.deepToString(cache));
     return cache[m-1][n-1];
   }
+
+  public static int uniquePathsDP(int m, int n) {
+    int[][] table = new int[m][n];
+
+    // cell 90, 0)
+    table[0][0] = 0;
+    
+    // fill top row
+    for(int i=1; i <= n; i++) {
+      table[0][i] = 1;
+    }
+
+    // fill leftmost column
+    for(int j=1; j <= m; j++) {
+      table[j][0] = 1;
+    }
+
+    // fill rest of the table
+    for(int i=1; i <= m; i++) {
+      for(int j=1; j <= n; j++) {
+        table[i][j] = table[i-1][j] + table[i][j-1];
+      }
+    }
+
+    return table[m][n];
+  }
 }
