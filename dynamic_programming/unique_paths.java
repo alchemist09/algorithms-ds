@@ -65,8 +65,6 @@ class UniquePaths {
         Arrays.fill(T[i], -1);
     }
     
-    System.out.println(Arrays.deepToString(T));
-    
     return uniquePathsUtil(T, m, n);
   }
 
@@ -87,7 +85,6 @@ class UniquePaths {
     }
     
     cache[m-1][n-1] = uniquePathsUtil(cache, m-1, n) + uniquePathsUtil(cache, m, n-1);
-    System.out.println(Arrays.deepToString(cache));
     return cache[m-1][n-1];
   }
 
