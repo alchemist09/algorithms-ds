@@ -2,7 +2,16 @@ package dynamic_programming;
 
 class StringInterleave {
   public static void main(String[] args) {
+    String str1 = "aabcc";
+		String str2 = "dbbca";
+		String str3 = "aadbbcbcac";
+
+    String str4 = "abc";
+		String str5 = "def";
+		String str6 = "dcabef";
     
+    System.out.println(isInterleaveBF(str1, str2, str3));
+    System.out.println(isInterleaveBF(str4, str5, str6));
   }
 
   public static boolean isInterleaveBF(String s1, String s2, String s3) {
