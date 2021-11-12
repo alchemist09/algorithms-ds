@@ -94,6 +94,21 @@ class StringInterleave {
       }
     }
 
-    return false;
+    for(int i=1; i < A.length(); i++) {
+      for(int j=1; j < B.length(); j++) {
+        int k = i+j;
+        if(A.charAt(i-1) == C.charAt(k-1) && B.charAt(j-1) == C.charAt(k-1)) {
+          T[i][j] = T[i-1][j] || T[i][j-1];
+        } else if(A.charAt(i-1) == C.charAt(k-1)) {
+          T[i][j] = T[i-1][j];
+        } else if(B.charAt(j-1) == C.charAt(k-1)) {
+          T[i][j] = T[i][j-1];
+        } else {
+          T[i][j] = false;
+        }
+      }
+    }
+
+    return T[A.length()][B.length()];
   }
 }
