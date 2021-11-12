@@ -23,6 +23,11 @@ class StringInterleave {
 		String str5 = "def";
 		String str6 = "dcabef";
     
+    System.out.println("BRUTE FORCE=======================");
+    System.out.println(isInterleaveBF(str1, str2, str3));
+    System.out.println(isInterleaveBF(str4, str5, str6));
+
+    System.out.println("\r\nDYNAMIC PROGRAMMING=======================");
     System.out.println(isInterleaveBF(str1, str2, str3));
     System.out.println(isInterleaveBF(str4, str5, str6));
   }
