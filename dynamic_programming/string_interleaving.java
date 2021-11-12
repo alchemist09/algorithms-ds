@@ -73,6 +73,13 @@ class StringInterleave {
     return (first || second || third);
   }
 
+  /**
+   * Determine if a string is an interleaving of two strings using bottom-up dynamic programming
+   * @param A The first string
+   * @param B The second string
+   * @param C The interleaved string
+   * @return Returns whether C is an interleaving of A and B
+   */
   public static boolean isInterleaveDP(String A, String B, String C) {
     if(C.length() != (A.length() + B.length())) {
       return false;
