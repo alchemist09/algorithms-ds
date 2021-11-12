@@ -85,6 +85,15 @@ class StringInterleave {
       }
     }
 
+    // first column, case where B is empty
+    for(int i=1; i <= A.length(); i++) {
+      if(A.charAt(i-1) != C.charAt(i-1)) {
+        T[i][0] = false;
+      } else {
+        T[i][0] = T[i-1][0];
+      }
+    }
+
     return false;
   }
 }
