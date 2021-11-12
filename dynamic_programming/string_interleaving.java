@@ -67,4 +67,24 @@ class StringInterleave {
     
     return (first || second || third);
   }
+
+  public static boolean isInterleaveDP(String A, String B, String C) {
+    if(C.length() != (A.length() + B.length())) {
+      return false;
+    }
+
+    boolean[][] T = new boolean[A.length()+1][B.length()+1];
+    T[0][0] = true;
+
+    // first row, case where A is empty
+    for(int j=1; j <= B.length(); j++) {
+      if(B.charAt(j-1) != C.charAt(j-1)) {
+        T[0][j] = false;
+      } else {
+        T[0][j] = T[0][j-1];
+      }
+    }
+
+    return false;
+  }
 }
