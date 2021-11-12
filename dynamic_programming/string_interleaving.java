@@ -27,6 +27,13 @@ class StringInterleave {
     System.out.println(isInterleaveBF(str4, str5, str6));
   }
 
+  /**
+   * Determine if a string is an interleaving of two strings using brute force approach
+   * @param s1 The first string 
+   * @param s2 The second string
+   * @param s3 The interleaved string
+   * @return Returns whether s3 is an interleaving of s1 and s2
+   */
   public static boolean isInterleaveBF(String s1, String s2, String s3) {
     // if all three strings are empty return true
     if(s1.length() == 0 && s2.length() == 0 && s3.length() == 0) {
