@@ -4,7 +4,10 @@ import java.util.Arrays;
 
 class SubsetSum {
   public static void main(String[] args) {
-    
+    int[] arr2 = {3, 2, 7, 1};
+    int target = 6;
+
+    System.out.println(isSubsetSum(arr2, target));
   }
 
   public static boolean isSubsetSum(int[] arr, int target) {
