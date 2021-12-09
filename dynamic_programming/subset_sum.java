@@ -28,5 +28,32 @@ class SubsetSum {
     
     // either include or exclude current item in subset
     return isSubsetSum(arr, target - arr[0]) || isSubsetSum(Arrays.copyOfRange(arr, 1, arr.length), target);
-}
+  }
+
+  public static boolean isSubsetSumDP(int[] arr, int target) {
+    boolean[][] T = new boolean[arr.length + 1][target + 1];
+    
+    // fill leftmost column - case where target is zero, everything is true 
+    for(int i=0; i < T.length; i++) {
+        T[i][0] = true;
+    }
+    
+    // fill topmost row - case where the target sum is zero, everything is false 
+    for(int j=1; j <= target; j++) {
+        T[0][j] = false;
+    }
+    
+    // fill the rest of the cells 
+    for(int i=1; i <= arr.length; i++) {
+        for(int j=1; j <= target; j++) {
+            if(j - arr[i-1] >= 0) {
+                T[i][j] = T[i-1][j] || T[i-1][j - arr[i-1]];
+            } else {
+                T[i][j] = T[i-1][j];
+            }
+        }
+    }
+    
+    return T[arr.length][target];
+  }
 }
