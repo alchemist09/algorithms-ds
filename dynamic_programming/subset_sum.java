@@ -8,6 +8,7 @@ class SubsetSum {
     int target = 6;
 
     System.out.println(isSubsetSum(arr2, target));
+    System.out.println(isSubsetSumDP(arr2, target));
   }
 
   public static boolean isSubsetSum(int[] arr, int target) {
