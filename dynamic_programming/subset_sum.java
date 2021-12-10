@@ -20,6 +20,9 @@ class SubsetSum {
     System.out.println(isSubsetSumDP(arr2, target));
   }
 
+  /**
+   * Recursive solution, O(2^N)
+   */
   public static boolean isSubsetSum(int[] arr, int target) {
     // a matching subset has been found
     if(target == 0) {
@@ -40,6 +43,9 @@ class SubsetSum {
     return isSubsetSum(arr, target - arr[0]) || isSubsetSum(Arrays.copyOfRange(arr, 1, arr.length), target);
   }
 
+  /**
+   * Using Dynamic Programming, O(N^2)
+   */
   public static boolean isSubsetSumDP(int[] arr, int target) {
     boolean[][] T = new boolean[arr.length + 1][target + 1];
     
