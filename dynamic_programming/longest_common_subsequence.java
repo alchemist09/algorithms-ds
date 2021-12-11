@@ -18,7 +18,7 @@ class LongestCommonSubsequence {
     int n_len = n.length();
   
     // case where last character of either substring is same
-    if(m.substring(m_len-1) == n.substring(n_len-1)) {
+    if(m.charAt(m_len-1) == n.charAt(n_len-1)) {
       return 1 + lcsRec(m.substring(0, m_len-1), n.substring(0, n_len-1));
     } else {
       // if ending characters are not same, return maximum of two recursive calls
