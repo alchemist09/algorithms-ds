@@ -2,7 +2,10 @@ package dynamic_programming;
 
 class LongestCommonSubsequence {
   public static void main(String[] args) {
-    
+    String s1 = "abcdef";
+		String s2 = "apqbrf";
+
+    System.out.println("LCS btwn 'abcdef' and 'apqbrf': " + lcsRec(s1, s2));
   }
 
   public static int lcsRec(String m, String n) {
