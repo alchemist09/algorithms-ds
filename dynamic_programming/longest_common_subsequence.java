@@ -45,4 +45,26 @@ class LongestCommonSubsequence {
     // System.out.println(Arrays.deepToString(T));
     return result;
   }
+
+  private static int lcsUtil(int[][] cache, String s1, String s2) {
+    int m = s1.length();
+    int n = s2.length();
+    
+    if(m == 0 || n == 0) {
+        return 0;
+    }
+    
+    if(cache[m-1][n-1] != -1) {
+        return cache[m-1][n-1];
+    }
+    
+    if(s1.charAt(m-1) == s2.charAt(n-1)) {
+        cache[m-1][n-1] = 1 + lcsUtil(cache, s1.substring(0, m-1), s2.substring(0, n-1));
+        return cache[m-1][n-1];
+    } else {
+        cache[m-1][n-1] = Math.max(lcsUtil(cache, s1.substring(0, m-1), s2), 
+                                  lcsUtil(cache, s1, s2.substring(0, n-1)));
+        return cache[m-1][n-1];
+    }
+  }
 }
