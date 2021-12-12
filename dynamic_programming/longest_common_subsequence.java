@@ -1,5 +1,7 @@
 package dynamic_programming;
 
+import java.util.Arrays;
+
 class LongestCommonSubsequence {
   public static void main(String[] args) {
     String s1 = "abcdef";
@@ -24,5 +26,23 @@ class LongestCommonSubsequence {
       // if ending characters are not same, return maximum of two recursive calls
       return Math.max(lcsRec(m.substring(0, m_len-1), n), lcsRec(m, n.substring(0, n_len-1)));
     }
+  }
+
+  public static int lcsMemo(String text1, String text2) {
+    if((text1 == null || text1.length() == 0) || (text2 == null || text2.length() == 0)) {
+        return 0;
+    }
+    
+    int m = text1.length();
+    int n = text2.length();
+    
+    int[][] T = new int[m][n];
+    for(int i=0; i < T.length; i++) {
+        Arrays.fill(T[i], -1);
+    }
+    
+    int result = lcsUtil(T, text1, text2);
+    // System.out.println(Arrays.deepToString(T));
+    return result;
   }
 }
