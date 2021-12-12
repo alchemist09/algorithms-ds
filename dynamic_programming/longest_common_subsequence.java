@@ -8,6 +8,7 @@ class LongestCommonSubsequence {
 		String s2 = "apqbrf";
 
     System.out.println("LCS btwn 'abcdef' and 'apqbrf': " + lcsRec(s1, s2));
+    System.out.println("LCS btwn 'abcdef' and 'apqbrf': " + lcsMemo(s1, s2));
   }
 
   public static int lcsRec(String m, String n) {
