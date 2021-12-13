@@ -103,4 +103,28 @@ class LongestCommonSubsequence {
     
     return T[m][n];
   }
+
+  public static int[][] lcsDP2(String s1, String s2) {
+    if((s1 == null || s1.length() == 0) || (s2 == null || s2.length() == 0)) {
+        return new int[0][0];
+    }
+    
+    int m = s1.length();
+    int n = s2.length();
+    
+    int[][] T = new int[m+1][n+1];
+    
+    // fill the rest of the cells
+    for(int i=1; i <= m; i++) {
+        for(int j=1; j <= n; j++) {
+            if(s1.charAt(i-1) == s2.charAt(j-1)) {
+                T[i][j] = 1 + T[i-1][j-1];
+            } else {
+                T[i][j] = Math.max(T[i-1][j], T[i][j-1]);
+            }
+        }
+    }
+    
+    return T;
+  }
 }
