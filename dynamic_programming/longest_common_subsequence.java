@@ -7,9 +7,23 @@ class LongestCommonSubsequence {
     String s1 = "abcdef";
 		String s2 = "apqbrf";
 
-    System.out.println("LCS btwn 'abcdef' and 'apqbrf': " + lcsRec(s1, s2));
-    System.out.println("LCS btwn 'abcdef' and 'apqbrf': " + lcsMemo(s1, s2));
-    System.out.println("LCS btwn 'abcdef' and 'apqbrf': " + lcsDP1(s1, s2));
+    String s3 = "aggtab";
+    String s4 = "gxtxayb";
+    
+    String s5 = "aaaccgtgagttattcgttctagaa";
+    String s6 = "cacccctaaggtacctttggttc";
+
+    System.out.println("(Brute Force) LCS btwn 'abcdef' and 'apqbrf': " + lcsRec(s1, s2));
+    System.out.println("(Memoization) LCS btwn 'abcdef' and 'apqbrf': " + lcsMemo(s1, s2));
+    System.out.println("(Dynamic Programming) LCS btwn 'abcdef' and 'apqbrf': " + lcsDP1(s1, s2));
+
+    System.out.println("\r\n(Brute Force) LCS btwn 'aggtab' and 'gxtxayb': " + lcsRec(s3, s4));
+    System.out.println("(Memoization) LCS btwn 'aggtab' and 'gxtxayb': " + lcsMemo(s3, s4));
+    System.out.println("(Dynamic Programming) LCS btwn 'aggtab' and 'gxtxayb': " + lcsDP1(s3, s4));
+
+    // O(2^N) - System.out.println("\r\n(Brute Force) LCS btwn 'aaaccgtgagttattcgttctagaa' and 'cacccctaaggtacctttggttc': " + lcsRec(s5, s6));
+    System.out.println("\r\n(Memoization) LCS btwn 'aaaccgtgagttattcgttctagaa' and 'cacccctaaggtacctttggttc': " + lcsMemo(s5, s6));
+    System.out.println("(Dynamic Programming) LCS btwn 'aaaccgtgagttattcgttctagaa' and 'cacccctaaggtacctttggttc': " + lcsDP1(s5, s6));
   }
 
   public static int lcsRec(String m, String n) {
