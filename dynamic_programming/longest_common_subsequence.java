@@ -127,4 +127,34 @@ class LongestCommonSubsequence {
     
     return T;
   }
+
+  public static char[] printLCS(String s1, String s2) {
+    int[][] T = lcsDP2(s1, s2);
+    
+    // Build up the LCS 
+    int i = s1.length();
+    int j = s2.length();
+    int len_of_lcs = T[i][j];
+    char[] lcs = new char[len_of_lcs];
+    
+    len_of_lcs--;
+    
+    while(i > 0 && j > 0) {
+        // if current character in s1 and s2 are the same, include the character 
+        if(s1.charAt(i-1) == s2.charAt(j-1)) {
+            lcs[len_of_lcs] = s1.charAt(i-1);
+            len_of_lcs--;
+            i--;
+            j--;
+        } else if(T[i-1][j] > T[i][j-1]) {
+            // go in the direction of the larger value 
+            i--;
+        } else {
+            j--;
+        }
+    }
+    
+    return lcs;
+    // System.out.println(Arrays.toString(lcs));
+  }
 }
