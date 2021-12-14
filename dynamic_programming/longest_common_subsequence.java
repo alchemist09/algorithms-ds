@@ -42,6 +42,12 @@ class LongestCommonSubsequence {
     System.out.print("\r\nLCS btwn 'aaaccgtgagttattcgttctagaa' and 'cacccctaaggtacctttggttc': " + Arrays.toString(printLCS(s5, s6)));
   }
 
+  /**
+   * Recursive Solution - Brute Force Approach O(2^N)
+   * @param m The first string
+   * @param n The second string
+   * @return The length of the longest common subseqence between the two strings
+   */
   public static int lcsRec(String m, String n) {
     // if length of either input string is zero, there's no common subsequence
     if(m.length() == 0 || n.length() == 0) {
@@ -60,6 +66,12 @@ class LongestCommonSubsequence {
     }
   }
 
+  /**
+   * Memoization Solution - Top-Down approach with recursion and caching
+   * @param text1 The first string
+   * @param text2 The second string
+   * @return The length of the longest subsequence that is common between the two strings
+   */
   public static int lcsMemo(String text1, String text2) {
     if((text1 == null || text1.length() == 0) || (text2 == null || text2.length() == 0)) {
         return 0;
@@ -78,6 +90,13 @@ class LongestCommonSubsequence {
     return result;
   }
 
+  /**
+   * Utility function that implements the recursion while caching computed values
+   * @param cache 2D table to store the results of computed subproblems
+   * @param s1 The first string
+   * @param s2 The second string
+   * @return maximum length of a subseqence that is common between the two strings
+   */
   private static int lcsUtil(int[][] cache, String s1, String s2) {
     int m = s1.length();
     int n = s2.length();
@@ -100,6 +119,12 @@ class LongestCommonSubsequence {
     }
   }
 
+  /**
+   * Dynamic Programming - Bottom-Up approach computes results to intermediate subproblems
+   * @param text1 The first string
+   * @param text2 The second string
+   * @return maximum length of a subsequence that is common between the two strings
+   */
   public static int lcsDP1(String text1, String text2) {
     if((text1 == null || text1.length() == 0) || (text2 == null || text2.length() == 0)) {
         return 0;
@@ -134,6 +159,13 @@ class LongestCommonSubsequence {
     return T[m][n];
   }
 
+  /**
+   * Dynamic Programming - Bottom-up approach of building the final result from
+   * intermediate results of subproblems having the same structure
+   * @param s1 The first string
+   * @param s2 The second string
+   * @return 2D table representing the LCS between the two strings at different indices.
+   */
   public static int[][] lcsDP2(String s1, String s2) {
     if((s1 == null || s1.length() == 0) || (s2 == null || s2.length() == 0)) {
         return new int[0][0];
@@ -158,6 +190,12 @@ class LongestCommonSubsequence {
     return T;
   }
 
+  /**
+   * Prints the actual characters tha make the longest common subsequence between the two strings
+   * @param s1 the first string
+   * @param s2 The second string
+   * @return Characters making the LCS between the two strings
+   */
   public static char[] printLCS(String s1, String s2) {
     int[][] T = lcsDP2(s1, s2);
     
