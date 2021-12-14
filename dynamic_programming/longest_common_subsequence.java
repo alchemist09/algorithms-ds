@@ -24,6 +24,10 @@ class LongestCommonSubsequence {
     // O(2^N) - System.out.println("\r\n(Brute Force) LCS btwn 'aaaccgtgagttattcgttctagaa' and 'cacccctaaggtacctttggttc': " + lcsRec(s5, s6));
     System.out.println("\r\n(Memoization) LCS btwn 'aaaccgtgagttattcgttctagaa' and 'cacccctaaggtacctttggttc': " + lcsMemo(s5, s6));
     System.out.println("(Dynamic Programming) LCS btwn 'aaaccgtgagttattcgttctagaa' and 'cacccctaaggtacctttggttc': " + lcsDP1(s5, s6));
+
+    System.out.print("\r\nLCS btwn 'abcdef' and 'apqbrf': " + Arrays.toString(printLCS(s1, s2)));
+    System.out.print("\r\nLCS btwn 'aggtab' and 'gxtxayb': " + Arrays.toString(printLCS(s3, s4)));
+    System.out.print("\r\nLCS btwn 'aaaccgtgagttattcgttctagaa' and 'cacccctaaggtacctttggttc': " + Arrays.toString(printLCS(s5, s6)));
   }
 
   public static int lcsRec(String m, String n) {
