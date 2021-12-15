@@ -15,7 +15,7 @@ class MinimumCoinChange {
 
     int num_coins = Integer.MAX_VALUE;
     for(int i=0; i < coins.length; i++) {
-      if(coins[i] < change) {
+      if(coins[i] <= change) {
         int temp = coinChangeBF(coins, change-coins[i]);
         if(temp + 1 < num_coins) {
           num_coins = temp + 1;
