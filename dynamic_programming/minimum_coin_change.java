@@ -2,7 +2,10 @@ package dynamic_programming;
 
 class MinimumCoinChange {
   public static void main(String[] args) {
-    
+    int[] coins = {1, 2, 3};
+    int change = 5;
+
+    System.out.println(coinChangeBF(coins, change));
   }
 
   public static int coinChangeBF(int[] coins, int change) {
