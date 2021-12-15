@@ -86,7 +86,6 @@ class LongestCommonSubsequence {
     }
     
     int result = lcsUtil(T, text1, text2);
-    // System.out.println(Arrays.deepToString(T));
     return result;
   }
 
@@ -223,6 +222,5 @@ class LongestCommonSubsequence {
     }
     
     return lcs;
-    // System.out.println(Arrays.toString(lcs));
   }
 }
