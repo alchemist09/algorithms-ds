@@ -10,11 +10,12 @@ class MinimumCoinChange {
     int[] coins2 = {1, 2, 5, 10, 12, 20, 50};
     int change2 = 65;
 
-    System.out.println(coinChangeBF(coins, change));
-    System.out.println(coinChangeMemo(coins, change));
-    System.out.println(coinChangeMemo(coins2, change2));
-    System.out.println(coinChangeDP(coins, change));
-    System.out.println(coinChangeDP(coins2, change2));
+    System.out.println("Brute Force: " + coinChangeBF(coins, change));
+    // System.out.println("Brute Force: " + coinChangeBF(coins2, change2)); - IT'S NOT RECOMMENDED TO EXECUTE THIS LINE, TAKES LONG TO FINISH
+    System.out.println("Memoization: " + coinChangeMemo(coins, change));
+    System.out.println("Memoization: " + coinChangeMemo(coins2, change2));
+    System.out.println("Dynamic Programming: " + coinChangeDP(coins, change));
+    System.out.println("Dynamic Programming: " + coinChangeDP(coins2, change2));
   }
 
   public static int coinChangeBF(int[] coins, int change) {
