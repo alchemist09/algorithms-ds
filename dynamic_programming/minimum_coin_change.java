@@ -9,8 +9,8 @@ class MinimumCoinChange {
     int change2 = 65;
 
     System.out.println(coinChangeBF(coins, change));
-    System.out.println(coinChange(coins, change));
-    System.out.println(coinChange(coins2, change2));
+    System.out.println(coinChangeMemo(coins, change));
+    System.out.println(coinChangeMemo(coins2, change2));
   }
 
   public static int coinChangeBF(int[] coins, int change) {
@@ -37,7 +37,7 @@ class MinimumCoinChange {
    * @param change The amount that should be given back as change
    * @return The least amount of coins that can be used to give back the target change
    */
-  public static int coinChange(int[] coins, int change) {
+  public static int coinChangeMemo(int[] coins, int change) {
     if(change == 0) {
         return 0;
     }
