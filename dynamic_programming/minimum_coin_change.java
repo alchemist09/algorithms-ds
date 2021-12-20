@@ -5,7 +5,12 @@ class MinimumCoinChange {
     int[] coins = {1, 2, 3};
     int change = 5;
 
+    int[] coins2 = {1, 2, 5, 10, 12, 20, 50};
+    int change2 = 65;
+
     System.out.println(coinChangeBF(coins, change));
+    System.out.println(coinChange(coins, change));
+    System.out.println(coinChange(coins2, change2));
   }
 
   public static int coinChangeBF(int[] coins, int change) {
