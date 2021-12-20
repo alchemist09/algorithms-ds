@@ -1,5 +1,7 @@
 package dynamic_programming;
 
+import java.util.Arrays;
+
 class MinimumCoinChange {
   public static void main(String[] args) {
     int[] coins = {1, 2, 3};
@@ -78,5 +80,38 @@ class MinimumCoinChange {
     cache[change] = min_coins;
      
     return cache[change];
+  }
+
+  /**
+   * Bottom-up Dynamic Programming approach of solving the minimum coin change problem
+   * @param coins The denominations of available coins
+   * @param amount The target change that should be given out
+   * @return The minimum number of coins that can give the specified change
+   */
+  public static int coinChangeDP(int[] coins, int amount) {
+    // result[i] stores the minimum no. of coins to give change for amount == i
+    // result[amount] will store the minimum amount of coins to give change for given amont
+    
+    int[] result = new int[amount + 1];
+    Arrays.fill(result, Integer.MAX_VALUE);
+    result[0] = 0;
+    
+    for(int i=1; i <= amount; i++) {
+        // go through every coin whose value is less than or equal to i
+        for(int j=0; j < coins.length; j++) {
+            if(coins[j] <= i) {
+                int num_coins = result[i-coins[j]];
+                if(num_coins != Integer.MAX_VALUE && num_coins + 1 < result[i]) {
+                    result[i] = num_coins + 1;
+                }
+            }
+        }
+    }
+    
+    if(result[amount] == Integer.MAX_VALUE) {
+        result[amount] = -1;
+    }
+    
+    return result[amount];
   }
 }
