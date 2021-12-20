@@ -25,4 +25,19 @@ class MinimumCoinChange {
 
     return num_coins;
   }
+
+  /**
+   * Top-Down Memoization method for solving the minimum coin change problen
+   * @param coins The available denominations of coins
+   * @param change The amount that should be given back as change
+   * @return The least amount of coins that can be used to give back the target change
+   */
+  public static int coinChange(int[] coins, int change) {
+    if(change == 0) {
+        return 0;
+    }
+    
+    int[] T = new int[change + 1];
+    return coinChangeUtil(coins, change, T);
+  }
 }
