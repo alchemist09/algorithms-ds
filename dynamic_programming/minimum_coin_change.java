@@ -18,6 +18,13 @@ class MinimumCoinChange {
     System.out.println("Dynamic Programming: " + coinChangeDP(coins2, change2));
   }
 
+  /**
+   * Brute Force approach of solving the the minimum coin change problem
+   * Uses exhaustive search via recursion to arrive at solution
+   * @param coins The denominations of available coins
+   * @param change The change that should be given out
+   * @return The minimum number of coins required to give out the specified change
+   */
   public static int coinChangeBF(int[] coins, int change) {
     if(change == 0) {
       return 0;
