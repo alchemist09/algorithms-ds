@@ -13,6 +13,8 @@ class MinimumCoinChange {
     System.out.println(coinChangeBF(coins, change));
     System.out.println(coinChangeMemo(coins, change));
     System.out.println(coinChangeMemo(coins2, change2));
+    System.out.println(coinChangeDP(coins, change));
+    System.out.println(coinChangeDP(coins2, change2));
   }
 
   public static int coinChangeBF(int[] coins, int change) {
