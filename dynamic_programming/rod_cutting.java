@@ -12,6 +12,11 @@ class RodCutting {
 		System.out.println(cutRodBF(price, rod_len1));
 		System.out.println(cutRodBF(price2, rod_len2));
 		System.out.println("\r\n");
+
+    System.out.println("Memoization");
+		System.out.println(cutRodMemo(price, rod_len1));
+		System.out.println(cutRodMemo(price2, rod_len2));
+		System.out.println("\r\n");
   }
 
   /**
