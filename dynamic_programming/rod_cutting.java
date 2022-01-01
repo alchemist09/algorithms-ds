@@ -48,4 +48,23 @@ class RodCutting {
     
     return cutRodUtil(prices, size, memoTable);
   }
+
+  /**
+   * A utiltiy function that handles the actual recursion with caching for the memoization method
+   * @param prices The prices of rods of different sizes
+   * @param size The size of the rod
+   * @param cache Cache to store results of previously computed values
+   * @return The maximum profit that can be derived from cutting the rod into various sizes
+   */
+  private static int cutRodUtil(int[] prices, int size, int[] cache) {
+    if(cache[size] > 0) {
+        return cache[size];
+    }
+    
+    for(int rodSize=1; rodSize <= size; rodSize++) {
+        cache[size] = Math.max(cache[size], prices[rodSize] + cutRodUtil(prices, size - rodSize, cache));
+    }
+    
+    return cache[size];
+  }
 }
