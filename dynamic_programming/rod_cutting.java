@@ -32,4 +32,20 @@ class RodCutting {
     
     return maxValue;
   }
+
+  /**
+   * Top-Down memoization approach for solving the rod-cutting problem
+   * @param prices The prices of rods of various sizes
+   * @param size The size of the rod being cut up
+   * @return The maximum profit derived that can be derived by cutting the rod into various sizes
+   */
+  public static int cutRodMemo(int[] prices, int size) {
+    if(prices == null || prices.length == 0 || size <= 0) {
+        return 0;
+    }
+    
+    int[] memoTable = new int[size + 1];
+    
+    return cutRodUtil(prices, size, memoTable);
+  }
 }
