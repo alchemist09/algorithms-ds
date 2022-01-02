@@ -22,6 +22,11 @@ class RodCutting {
 		System.out.println(cutRodDP(price, rod_len1));
 		System.out.println(cutRodDP(price2, rod_len2));
 		System.out.println("\r\n");
+
+    System.out.println("Dynamic Programming 2");
+		System.out.println(cutRodDP2(price, rod_len1));
+		System.out.println(cutRodDP2(price2, rod_len2));
+		System.out.println("\r\n");
   }
 
   /**
