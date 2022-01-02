@@ -72,4 +72,27 @@ class RodCutting {
     
     return cache[size];
   }
+
+  /**
+   * Bottom-Up Dynamic Programming approach for solving the rod cutting problem
+   * @param prices Prices of rods of different lengths
+   * @param size The size of the rod to be cut up
+   * @return The maximum profit that can be derived from cutting the rod into various sizes
+   */
+  public static int cutRodDP(int[] prices, int size) {
+    if(prices == null || prices.length == 0 || size == 0) {
+        return 0;
+    }
+    
+    int[] maxValue = new int[size + 1];
+    
+    // maxValue[i] stores the maximum value from cutting a rod of size i
+    for(int i=1; i <= size; i++) {
+        for(int j=1; j <= i; j++) {
+            maxValue[i] = Math.max(maxValue[i], prices[j] + maxValue[i-j]);
+        }
+    }
+    
+    return maxValue[size];
+  }
 }
