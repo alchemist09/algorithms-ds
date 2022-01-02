@@ -100,4 +100,26 @@ class RodCutting {
     
     return maxValue[size];
   }
+
+  /**
+   * Bottom-up Dynamic Programming approach for solving the rod cutting problem using 2D Table
+   * @param prices Prices of rod of various sizes
+   * @param size Size of the rod to be cut up
+   * @return Maximum profit that can be derived from cutting the rod into various sizes
+   */
+  public static int cutRodDP2(int[] prices, int size) {
+    int[][] dp = new int[prices.length + 1][size + 1];
+    
+    for(int i=1; i <= prices.length; i++) {
+        for(int rodSize = 1; rodSize <= size; rodSize++) {
+            if(rodSize >= i) {
+                dp[i][rodSize] = Math.max(dp[i-1][rodSize], prices[i] + dp[i][rodSize - i]);
+            } else {
+                dp[i][rodSize] = dp[i-1][rodSize];
+            }
+        }
+    }
+    
+    return dp[prices.length][size];
+  }
 }
