@@ -67,4 +67,39 @@ class Knapsack {
     int[][] cache = new int[n+1][capacity + 1];
     return knapSackUtil01(capacity, weights, values, n, cache);
   }
+
+  /**
+   * Recursive helper function that helps with the memoization solution
+	 * @param capacity The maximum capacity of the backpack
+	 * @param weights Array holding the weights of individuals items
+	 * @param values  Array holding the value associated with each item
+	 * @param n       The number of items available
+	 * @return        The maximum value that can be packed into the backpack
+	 */
+	private static int knapSackUtil01(int capacity, int[] weights, int[] values, int n, int[][]cache) {
+    // no more capacity left or we've exhausted the number of items
+    if(capacity <= 0 || n <= 0) {
+        return 0;
+    }
+    
+    // if maximum value for a certain capacity and number of items is already computed, return zero
+    if(cache[n][capacity] > 0) {
+        return cache[n][capacity];
+    }
+    
+    // case where current item is greater than backpack capacity - skip the item
+    if(weights[n-1] > capacity) {
+        return knapSackUtil01(capacity, weights, values, n-1, cache);
+    } 
+    
+    // case where we choose to include current item 
+    int x = values[n-1] + knapSackUtil01(capacity - weights[n-1], weights, values, n-1, cache);
+    
+    // case where we choose to exclude current item
+    int y = knapSackUtil01(capacity, weights, values, n-1, cache);
+    
+    cache[n][capacity] = Math.max(x, y);
+    
+    return cache[n][capacity];
+  }
 }
