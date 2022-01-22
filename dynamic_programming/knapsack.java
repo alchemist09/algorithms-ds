@@ -46,4 +46,25 @@ class Knapsack {
     
     return Math.max(x, y);
   }
+
+  /**
+   * Top-down Memoization solution for solving 0/1 Knapsack problem
+	 * @param capacity The maximum capacity of the backpack
+	 * @param weights  Array holding the weights of individuals items
+	 * @param values   Array holding the value associated with each item
+	 * @param n        The number of items available
+	 * @return         The maximum value that can be packed into the backpack
+	 */
+	public static int knapSackMemo01(int capacity, int[] weights, int[] values, int n) {
+    if(capacity == 0 || n == 0) {
+        return 0;
+    }
+    
+    if(weights == null || weights.length == 0 || values == null || values.length == 0) {
+        return 0;
+    }
+    
+    int[][] cache = new int[n+1][capacity + 1];
+    return knapSackUtil01(capacity, weights, values, n, cache);
+  }
 }
