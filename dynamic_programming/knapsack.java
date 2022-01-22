@@ -26,6 +26,7 @@ class Knapsack {
   }
 
   /**
+   * Brute force solution to the 0/1 Knapsack problem
 	 * @param capacity The maximum capacity of the backpack
 	 * @param weights  Array holding the weights of individuals items
 	 * @param values   Array holding the value associated with each item
