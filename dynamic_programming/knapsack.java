@@ -20,6 +20,13 @@ class Knapsack {
 		System.out.println(knapSackBF(capacity3, weights03, values03, weights03.length));
   }
 
+  /**
+	 * @param capacity The maximum capacity of the backpack
+	 * @param weights  Array holding the weights of individuals items
+	 * @param values   Array holding the value associated with each item
+	 * @param n        The number of items available
+	 * @return         The maximum value that can be packed into the backpack
+	 */
   public static int knapSackBF(int capacity, int[] weights, int[] values, int n) {
     // if backpack is full or there are no more items left, return zero 
     if(capacity <= 0 || n <= 0) {
