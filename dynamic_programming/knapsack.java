@@ -175,4 +175,34 @@ class Knapsack {
     
     return cache.get(key);
   }
+
+  /**
+   * Bottom-up Dynamic Programming Solution to 0/1 Knapsack problem
+	 * @param capacity The maximum capacity of the backpack
+	 * @param weights Array holding the weights of individuals items
+	 * @param values  Array holding the value associated with each item
+	 * @param n       The number of items available
+	 * @return        The maximum value that can be packed into the backpack
+	 */
+	public static int knapSackDP(int capacity, int[] weights, int[] values, int n) {
+    if(weights == null || weights.length == 0 || values == null || values.length == 0) {
+        return 0;
+    }
+    
+    int[][] dp = new int[n + 1][capacity + 1];
+    
+    for(int i=1; i <= n; i++) {
+      for(int tempWeight = 1; tempWeight <= capacity; tempWeight++) {
+        if(weights[i-1] <= tempWeight) {
+          dp[i][tempWeight] = Math.max(dp[i-1][tempWeight], values[i-1] + dp[i-1][tempWeight - weights[i-1]]);
+        } else {
+          // current item exceeds the capacity being examined,
+          // max value is same as maximum value obtained by including previous items
+          dp[i][tempWeight] = dp[i-1][tempWeight];
+        }
+      }
+    }
+    
+    return dp[n][capacity];
+  }
 }
