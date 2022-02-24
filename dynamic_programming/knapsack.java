@@ -31,6 +31,11 @@ class Knapsack {
 		System.out.println(knapSackMemo02(capacity, weights01, values01, weights01.length));
 		System.out.println(knapSackMemo02(capacity2, weights02, values02, weights02.length));
 		System.out.println(knapSackMemo02(capacity3, weights03, values03, weights03.length));
+
+    System.out.println("\r\nDynamic Programming:");
+		System.out.println(knapSackMemo02(capacity, weights01, values01, weights01.length));
+		System.out.println(knapSackMemo02(capacity2, weights02, values02, weights02.length));
+		System.out.println(knapSackMemo02(capacity3, weights03, values03, weights03.length));
   }
 
   /**
