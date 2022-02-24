@@ -132,4 +132,42 @@ class Knapsack {
     Map<String, Integer> valuesMap = new HashMap<String, Integer>();
     return knapSackUtil02(capacity, weights, values, n, valuesMap);
   }
+
+  /**
+   * Recursive helper function that does the actual computation of the solution
+	 * @param capacity The maximum capacity of the backpack
+	 * @param weights Array holding the weights of individuals items
+	 * @param values  Array holding the value associated with each item
+	 * @param n       The number of items available
+	 * @return        The maximum value that can be packed into the backpack
+	 */
+	public static int knapSackUtil02(int capacity, int[] weights, int[] values, int n, Map<String, Integer> cache) {
+    // no more capacity left or we've exhausted the number of items
+    if(capacity <= 0 || n <= 0) {
+        return 0;
+    }
+    
+    // Construct a key from the dynamic parameters of the method
+    String key = capacity + "-" + n;
+    
+    // Check if matching values have been computed before
+    if(cache.containsKey(key)) {
+        return cache.get(key);
+    }
+    
+    // case where current item is greater than backpack capacity - skip the item
+    if(weights[n-1] > capacity) {
+        return knapSackUtil02(capacity, weights, values, n-1, cache);
+    }
+    
+    // case where we choose to include current item
+    int x = values[n-1] + knapSackUtil02(capacity - weights[n-1], weights, values, n-1, cache);
+    
+    // case where we choose to exclude current item
+    int y = knapSackUtil02(capacity, weights, values, n-1, cache);
+    
+    cache.put(key, Math.max(x, y));
+    
+    return cache.get(key);
+  }
 }
