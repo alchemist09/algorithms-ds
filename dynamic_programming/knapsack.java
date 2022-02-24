@@ -1,5 +1,8 @@
 package dynamic_programming;
 
+import java.util.Map;
+import java.util.HashMap;
+
 class Knapsack {
   public static void main(String[] args) {
     int[] weights01 = {2, 3, 5, 7, 10};
@@ -107,5 +110,26 @@ class Knapsack {
     cache[n][capacity] = Math.max(x, y);
     
     return cache[n][capacity];
+  }
+
+  /**
+   * Alternative Top-Down Memoization solution for 0/1 Knapsack problem
+	 * @param capacity The maximum capacity of the backpack
+	 * @param weights Array holding the weights of individuals items
+	 * @param values  Array holding the value associated with each item
+	 * @param n       The number of items available
+	 * @return        The maximum value that can be packed into the backpack
+	 */
+	public static int knapSackMemo02(int capacity, int[] weights, int[] values, int n) {
+    if(capacity == 0 || n == 0) {
+        return 0;
+    }
+    
+    if(weights == null || weights.length == 0 || values == null || values.length == 0) {
+        return 0;
+    }
+    
+    Map<String, Integer> valuesMap = new HashMap<String, Integer>();
+    return knapSackUtil02(capacity, weights, values, n, valuesMap);
   }
 }
