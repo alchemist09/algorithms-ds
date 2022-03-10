@@ -1,5 +1,7 @@
 package dynamic_programming;
 
+import java.util.Arrays;
+
 class EggDrop {
   public static void main(String[] args) {
     int num_eggs1 = 2;
@@ -46,5 +48,24 @@ class EggDrop {
     }
     
     return minDrops + 1;
+  }
+
+  /**
+   * Top-Down Memoization Solution to Egg Drop Problem
+   * @param eggs The number of eggs available for the experiment
+   * @param floors The number of floors from where egg drop experiments are conducted
+   * @return The minimum no. of drops that determines the floor upon which an egg breaks
+   */
+  public static int eggDropMemo(int eggs, int floors) {
+    if(eggs == 0 || floors == 0) {
+        return 0;
+    }
+    
+    int[][] memoTable = new int[eggs + 1][floors + 1];
+    for(int i=0; i <= eggs; i++) {
+        Arrays.fill(memoTable[i], Integer.MAX_VALUE);
+    }
+    
+    return dropUtil(eggs, floors, memoTable);
   }
 }
