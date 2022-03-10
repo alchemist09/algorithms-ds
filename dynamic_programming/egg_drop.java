@@ -68,4 +68,40 @@ class EggDrop {
     
     return dropUtil(eggs, floors, memoTable);
   }
+
+  /**
+   * Recursive function that helps with the Memoization solution
+   * @param eggs No. of eggs available for egg dropping experiment
+   * @param floors No. of floors on building from which eggs is dropped
+   * @param cache 2D array to store solution to already computed subproblems
+   * @return Minimum drops to determine the floor which breaks an egg
+   */
+  private static int dropUtil(int eggs, int floors, int[][] cache) {
+    if(eggs == 1 || floors == 0 || floors == 1) {
+        return floors;
+    }
+    
+    // if value already computed, return it
+    if(cache[eggs][floors] != Integer.MAX_VALUE) {
+        return cache[eggs][floors];
+    }
+    
+    int minDrops = Integer.MAX_VALUE;
+    
+    for(int curr_floor = 1; curr_floor <= floors; curr_floor++) {
+        int temp = Math.max(
+                // case where egg breaks
+                dropUtil(eggs-1, curr_floor - 1, cache),
+                // case where egg doesn't break
+                dropUtil(eggs, floors - curr_floor, cache)
+            );
+            
+        if(temp < minDrops) {
+            minDrops = temp;
+            cache[eggs][floors] = minDrops + 1;
+        }
+    }
+    
+    return cache[eggs][floors];
+  }
 }
