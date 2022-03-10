@@ -13,10 +13,27 @@ class EggDrop {
 		int num_eggs3 = 2;
 		int num_floors3 = 10;
 
+    int num_eggs4 = 3;
+		int num_floors4 = 26;
+		
+		int num_eggs5 = 2;
+		int num_floors5 = 36;
+		
+		int num_eggs6 = 2;
+		int num_floors6 = 50;
+
     System.out.println("Egg Drop - Brute Force: ");
 		System.out.println(eggDropBF(num_eggs1, num_floors1));
 		System.out.println(eggDropBF(num_eggs2, num_floors2));
 		System.out.println(eggDropBF(num_eggs3, num_floors3));
+
+    System.out.println("\nEgg Drop - Memoization: ");
+		System.out.println(eggDropMemo(num_eggs1, num_floors1));
+		System.out.println(eggDropMemo(num_eggs2, num_floors2));
+		System.out.println(eggDropMemo(num_eggs3, num_floors3));
+		System.out.println(eggDropMemo(num_eggs4, num_floors4));
+		System.out.println(eggDropMemo(num_eggs5, num_floors5));
+		System.out.println(eggDropMemo(num_eggs6, num_floors6));
   }
 
   /**
