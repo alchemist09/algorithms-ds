@@ -2,7 +2,19 @@ package dynamic_programming;
 
 class EggDrop {
   public static void main(String[] args) {
-    
+    int num_eggs1 = 2;
+		int num_floors1 = 6;
+		
+		int num_eggs2 = 3;
+		int num_floors2 = 14;
+		
+		int num_eggs3 = 2;
+		int num_floors3 = 10;
+
+    System.out.println("Egg Drop - Brute Force: ");
+		System.out.println(eggDropBF(num_eggs1, num_floors1));
+		System.out.println(eggDropBF(num_eggs2, num_floors2));
+		System.out.println(eggDropBF(num_eggs3, num_floors3));
   }
 
   /**
