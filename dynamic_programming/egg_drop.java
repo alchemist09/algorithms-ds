@@ -121,4 +121,45 @@ class EggDrop {
     
     return cache[eggs][floors];
   }
+
+  /**
+   * Bottom-Up Dynamic Programming Solution to Egg Dropping Problem
+   * @param eggs No. of available eggs for egg dropping experiment
+   * @param floors No. of floors on the building from which eggs are being dropped
+   * @return Minimum no. of drops to determine floor from which an en egg breaks
+   */
+  public static int eggDropDP(int eggs, int floors) {
+    if(eggs == 0 || floors == 0) {
+      return 0;
+    }
+    
+    int[][] dp = new int[eggs + 1][floors + 1];
+    
+    // if we have only one egg, number of drops in the worst case
+    // is going to equal no. of floors
+    for(int j=0; j <= floors; j++) {
+      dp[1][j] = j;
+    }
+    
+    for(int egg = 2; egg <= eggs; egg++) {
+      for(int curr_floor = 1; curr_floor <= floors; curr_floor++) {
+        dp[egg][curr_floor] = Integer.MAX_VALUE;
+        // for every intermediate floor between the floor 1 and the current floor,
+        // do egg drop attempts to determine the minimum no. of drops in the worst case
+        // you need to to know the floor at which the egg breaks
+        for(int drop_attempt=1; drop_attempt <= curr_floor; drop_attempt++) {
+          int temp = 1 + Math.max(
+            // case where egg breaks
+            dp[egg - 1][drop_attempt - 1],
+            // case where egg doesn't break
+            dp[egg][curr_floor - drop_attempt]
+          );
+
+          dp[egg][curr_floor] = Math.min(temp, dp[egg][curr_floor]);
+        }
+      }
+    }
+
+    return dp[eggs][floors];
+  }
 }
