@@ -34,6 +34,14 @@ class EggDrop {
 		System.out.println(eggDropMemo(num_eggs4, num_floors4));
 		System.out.println(eggDropMemo(num_eggs5, num_floors5));
 		System.out.println(eggDropMemo(num_eggs6, num_floors6));
+
+    System.out.println("\nEgg Drop - Dynamic Programming: ");
+		System.out.println(eggDropDP(num_eggs1, num_floors1));
+		System.out.println(eggDropDP(num_eggs2, num_floors2));
+		System.out.println(eggDropDP(num_eggs3, num_floors3));
+		System.out.println(eggDropDP(num_eggs4, num_floors4));
+		System.out.println(eggDropDP(num_eggs5, num_floors5));
+		System.out.println(eggDropDP(num_eggs6, num_floors6));
   }
 
   /**
